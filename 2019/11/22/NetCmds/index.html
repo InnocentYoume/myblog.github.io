@@ -46,15 +46,15 @@
   };
 </script>
 
-  <meta name="description" content="实验设备 模拟器 : HCL 路由器 : MSR36-20 交换机 : S5820V2-54QS-GE 操作系统 : ComwareV7.0   交换机 TELNET方式登录交换机使用如下命令: 1234567[SW]int vlan &amp;#123;vlanid&amp;#125;[SW-Vlan-interface1]ip address &amp;#123;IP地址&amp;#125; &amp;#123;子网掩码&amp;#125;">
+  <meta name="description" content="实验设备 模拟器 : HCL 路由器 : MSR36-20 交换机 : S5820V2-54QS-GE 操作系统 : ComwareV7.0交换机TELNET方式登录交换机使用如下命令:1234567[SW]int vlan &amp;#123;vlanid&amp;#125;[SW-Vlan-interface1]ip address &amp;#123;IP地址&amp;#125; &amp;#123;子网掩码&amp;#125;[SW-V">
 <meta name="keywords" content="IT,Embedded Software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络综合实验常用指令汇总">
 <meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;22&#x2F;NetCmds&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
-<meta property="og:description" content="实验设备 模拟器 : HCL 路由器 : MSR36-20 交换机 : S5820V2-54QS-GE 操作系统 : ComwareV7.0   交换机 TELNET方式登录交换机使用如下命令: 1234567[SW]int vlan &amp;#123;vlanid&amp;#125;[SW-Vlan-interface1]ip address &amp;#123;IP地址&amp;#125; &amp;#123;子网掩码&amp;#125;">
+<meta property="og:description" content="实验设备 模拟器 : HCL 路由器 : MSR36-20 交换机 : S5820V2-54QS-GE 操作系统 : ComwareV7.0交换机TELNET方式登录交换机使用如下命令:1234567[SW]int vlan &amp;#123;vlanid&amp;#125;[SW-Vlan-interface1]ip address &amp;#123;IP地址&amp;#125; &amp;#123;子网掩码&amp;#125;[SW-V">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-22T09:51:40.273Z">
+<meta property="og:updated_time" content="2019-11-23T06:41:54.055Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://qidianxuan.github.io/2019/11/22/NetCmds/">
@@ -207,10 +207,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-22 17:50:02 / 修改时间：17:51:40" itemprop="dateCreated datePublished" datetime="2019-11-22T17:50:02+08:00">2019-11-22</time>
+              <time title="创建时间：2019-11-22 17:50:02" itemprop="dateCreated datePublished" datetime="2019-11-22T17:50:02+08:00">2019-11-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 14:41:54" itemprop="dateModified" datetime="2019-11-23T14:41:54+08:00">2019-11-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -252,16 +258,10 @@
 <li>模拟器 : HCL</li>
 <li>路由器 : MSR36-20</li>
 <li>交换机 : S5820V2-54QS-GE</li>
-<li>操作系统 : ComwareV7.0</li>
+<li>操作系统 : ComwareV7.0<h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><h3 id="TELNET方式登录交换机"><a href="#TELNET方式登录交换机" class="headerlink" title="TELNET方式登录交换机"></a>TELNET方式登录交换机</h3>使用如下命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[SW]int vlan &#123;vlanid&#125;</span><br><span class="line">[SW-Vlan-interface1]ip address &#123;IP地址&#125; &#123;子网掩码&#125;</span><br><span class="line">[SW-Vlan-interface1]telnet server enable</span><br><span class="line">[SW]user-interface vty 0 4</span><br><span class="line">[SW-line-vty0-4]auth password</span><br><span class="line">[SW-line-vty0-4]set auth pass simple &#123;密码&#125;</span><br><span class="line">[SW-line-vty0-4]user level-3</span><br></pre></td></tr></table></figure>
+如上,之后在PC使用如下指令即可:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet &#123;之前设置的ip地址&#125;</span><br></pre></td></tr></table></figure>
+如果使用交换机,记得设置交换机ip地址</li>
 </ul>
-<hr>
-<h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><hr>
-<h3 id="TELNET方式登录交换机"><a href="#TELNET方式登录交换机" class="headerlink" title="TELNET方式登录交换机"></a>TELNET方式登录交换机</h3><p>使用如下命令:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[SW]int vlan &#123;vlanid&#125;</span><br><span class="line">[SW-Vlan-interface1]ip address &#123;IP地址&#125; &#123;子网掩码&#125;</span><br><span class="line">[SW-Vlan-interface1]telnet server enable</span><br><span class="line">[SW]user-interface vty 0 4</span><br><span class="line">[SW-line-vty0-4]auth password</span><br><span class="line">[SW-line-vty0-4]set auth pass simple &#123;密码&#125;</span><br><span class="line">[SW-line-vty0-4]user level-3</span><br></pre></td></tr></table></figure>
-<p>如上,之后在PC使用如下指令即可:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet &#123;之前设置的ip地址&#125;</span><br></pre></td></tr></table></figure>
-<p>如果使用交换机,记得设置交换机ip地址</p>
-<hr>
 <h3 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a>链路聚合</h3><p>首先,要新建立一个聚合组</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[SW]interface bridge-aggregation &#123;聚合端口号 0-1024&#125;</span><br></pre></td></tr></table></figure>
 <p><br>注意 : 同一个聚合下的端口必须都工作在全双工模式下且速率相同<br><br>配置端口模式</p>
@@ -270,17 +270,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW]interface Ethernet &#123;端口号,以1/0/1为例&#125;</span><br><span class="line">[SW-GigabitEthernet1/0/1]port link-aggregation &#123;聚合端口号&#125;</span><br></pre></td></tr></table></figure>
 <p>如上,端口 1/0/1 被 聚合 到 组2 内,之后,可以看一下结果<br><br>显示聚合信息:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[SW]display link-aggregation summary</span><br></pre></td></tr></table></figure>
-<hr>
+
 <h3 id="生成树协议配置"><a href="#生成树协议配置" class="headerlink" title="生成树协议配置"></a>生成树协议配置</h3><p>首先,为了使各交换机使用相同的生成树协议标准,先在个交换机执行以下命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW]stp mode rstp</span><br><span class="line">[SW]stp patchcost-standard legacy</span><br></pre></td></tr></table></figure>
-<h2 id="因为STP默认开启-所以此时STP已打开"><a href="#因为STP默认开启-所以此时STP已打开" class="headerlink" title="因为STP默认开启,所以此时STP已打开"></a>因为STP默认开启,所以此时STP已打开</h2><h3 id="VLAN配置"><a href="#VLAN配置" class="headerlink" title="VLAN配置"></a>VLAN配置</h3><p>创建vlan将端口加入</p>
+<p>因为STP默认开启,所以此时STP已打开</p>
+<h3 id="VLAN配置"><a href="#VLAN配置" class="headerlink" title="VLAN配置"></a>VLAN配置</h3><p>创建vlan将端口加入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW]vlan &#123;vlan id&#125;</span><br><span class="line">[SW-vlan2]prot GigabitEthernet &#123;起始端口号&#125; to &#123;终止端口号&#125;</span><br></pre></td></tr></table></figure>
 <p>注意 : 也可以只写一个port来加入,这样创建的port类型为缺省值access port<br>要建立trunk port,需要首先对目标端口进行链路聚合(哪怕只有一个端口)<br>之后,进行如下设置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW-bridge-aggregation1]port link-type trunk</span><br><span class="line">[SW-bridge-aggregation1]port trunk permit vlan &#123;源Vlan id&#125; to &#123;目标vlan id&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><hr>
-<h3 id="使用TELNET登录路由器"><a href="#使用TELNET登录路由器" class="headerlink" title="使用TELNET登录路由器"></a>使用TELNET登录路由器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[RT]telnet server enable  /缺省情况下，Telnet服务处于关闭状态</span><br><span class="line">[RT]line vty 0   /进入一个或多个VTY用户线视图</span><br><span class="line">[RT-line-vty0]authentication-mode scheme  /设置登录用户的认证方式为通过AAA认证</span><br><span class="line">[RT]local-user test class manage（创建用户名）</span><br><span class="line">[RT-luser-manage-test]password simple &#123;密码&#125;</span><br><span class="line">[RT-luser-manage-test]service-type telnet</span><br><span class="line">[RT-luser-manage-test]authorization-attribute user-role network-admin（设置登陆权限是超级用户最高权限）</span><br></pre></td></tr></table></figure>
-<hr>
+<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><h3 id="使用TELNET登录路由器"><a href="#使用TELNET登录路由器" class="headerlink" title="使用TELNET登录路由器"></a>使用TELNET登录路由器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[RT]telnet server enable  /缺省情况下，Telnet服务处于关闭状态</span><br><span class="line">[RT]line vty 0   /进入一个或多个VTY用户线视图</span><br><span class="line">[RT-line-vty0]authentication-mode scheme  /设置登录用户的认证方式为通过AAA认证</span><br><span class="line">[RT]local-user test class manage（创建用户名）</span><br><span class="line">[RT-luser-manage-test]password simple &#123;密码&#125;</span><br><span class="line">[RT-luser-manage-test]service-type telnet</span><br><span class="line">[RT-luser-manage-test]authorization-attribute user-role network-admin（设置登陆权限是超级用户最高权限）</span><br></pre></td></tr></table></figure>
 <h3 id="路由协议设置"><a href="#路由协议设置" class="headerlink" title="路由协议设置"></a>路由协议设置</h3><p>静态路由</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route-static &#123;dest ip addr&#125; &#123;mask&#125; &#123;next-hoop&#125;</span><br></pre></td></tr></table></figure>
 <p>显示路由表</p>
@@ -293,18 +291,16 @@ ospf
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[RT]ospf</span><br><span class="line">[RT-ospf-1]area 0</span><br><span class="line">[RT-ospf-1-area-0.0.0.0]network &#123;要启用的ip&#125; &#123;反子网掩码&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
 <h3 id="广域网协议设置"><a href="#广域网协议设置" class="headerlink" title="广域网协议设置"></a>广域网协议设置</h3><h4 id="PAP"><a href="#PAP" class="headerlink" title="PAP"></a>PAP</h4><p><br>pap为双向认证,需要双方都开启<br><br><br><br>验证方</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial1/0]ppp authentication-mode pap</span><br><span class="line">[RA]local-user &#123;用户名&#125;</span><br><span class="line">[RA-luser-manage-ra]service-type ppp</span><br><span class="line">[RA-luser-manage-ra]password simple &#123;密码&#125;</span><br><span class="line">[RA-Serial1/0]shutdown</span><br><span class="line">[RA-Serial1/0]undo shutdwon</span><br></pre></td></tr></table></figure>
 <p>被验证方</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[RB-Serial1/0]ppp pap local-user &#123;用户名&#125; password simple &#123;密码&#125;</span><br></pre></td></tr></table></figure>
 <p>注意:此处用户名与密码须与上述相同<br><br>此时只实现了单向验证,双方是无法ping通的,需要实现双向认证</p>
-<hr>
 <h4 id="CHAP"><a href="#CHAP" class="headerlink" title="CHAP"></a>CHAP</h4><p><br>验证方</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial1/0]ppp authentication-mode chap</span><br><span class="line">[RA-Serial1/0]ppp chap user &#123;对方用户名&#125;</span><br><span class="line">[RA]local-user &#123;自己用户名&#125;</span><br><span class="line">[RA-luser-manage-ra]service-type ppp</span><br><span class="line">[RA-luser-manage-ra]password simple &#123;密码&#125;</span><br><span class="line">[RA-Serial1/0]shutdown</span><br><span class="line">[RA-Serial1/0]undo shutdwon</span><br></pre></td></tr></table></figure>
 <p>被验证方</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial1/0]ppp chap user &#123;对方用户名&#125;</span><br><span class="line">[RA]local-user &#123;自己用户名&#125;</span><br><span class="line">[RA-luser-manage-ra]service-type ppp</span><br><span class="line">[RA-luser-manage-ra]password simple &#123;密码&#125;</span><br><span class="line">[RA-Serial1/0]shutdown</span><br><span class="line">[RA-Serial1/0]undo shutdwon</span><br></pre></td></tr></table></figure>
-<hr>
+
 <h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p>基于basic ACL</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[RT]acl basic &#123;acl编号2000~&#125; match-order auto</span><br><span class="line">[RT-acl-inv4-adv-2001]rule &#123;permit|deny&#125; ip &#123;source|dest&#125; &#123;反子网掩码&#125;</span><br><span class="line">[RT-Eth/Ser]packet-filter 2001 &#123;inbound|outbound&#125;</span><br></pre></td></tr></table></figure>
 <p>基于advanced ACL</p>
@@ -327,18 +323,6 @@ ospf
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/13/hello-world/" rel="next" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
-                </a>
-            </div>
-
-            <span class="post-nav-divider"></span>
-
-            <div class="post-nav-prev post-nav-item">
-            </div>
-          </div>
       </footer>
     
   </article>
@@ -376,7 +360,7 @@ ospf
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验设备"><span class="nav-number">1.</span> <span class="nav-text">实验设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机"><span class="nav-number">2.</span> <span class="nav-text">交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TELNET方式登录交换机"><span class="nav-number">2.1.</span> <span class="nav-text">TELNET方式登录交换机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链路聚合"><span class="nav-number">2.2.</span> <span class="nav-text">链路聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成树协议配置"><span class="nav-number">2.3.</span> <span class="nav-text">生成树协议配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#因为STP默认开启-所以此时STP已打开"><span class="nav-number">3.</span> <span class="nav-text">因为STP默认开启,所以此时STP已打开</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#VLAN配置"><span class="nav-number">3.1.</span> <span class="nav-text">VLAN配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由器"><span class="nav-number">4.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用TELNET登录路由器"><span class="nav-number">4.1.</span> <span class="nav-text">使用TELNET登录路由器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议设置"><span class="nav-number">4.2.</span> <span class="nav-text">路由协议设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广域网协议设置"><span class="nav-number">4.3.</span> <span class="nav-text">广域网协议设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PAP"><span class="nav-number">4.3.1.</span> <span class="nav-text">PAP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CHAP"><span class="nav-number">4.3.2.</span> <span class="nav-text">CHAP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙"><span class="nav-number">4.4.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NAT"><span class="nav-number">4.5.</span> <span class="nav-text">NAT</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验设备"><span class="nav-number">1.</span> <span class="nav-text">实验设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交换机"><span class="nav-number">2.</span> <span class="nav-text">交换机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TELNET方式登录交换机"><span class="nav-number">2.1.</span> <span class="nav-text">TELNET方式登录交换机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链路聚合"><span class="nav-number">2.2.</span> <span class="nav-text">链路聚合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成树协议配置"><span class="nav-number">2.3.</span> <span class="nav-text">生成树协议配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VLAN配置"><span class="nav-number">2.4.</span> <span class="nav-text">VLAN配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路由器"><span class="nav-number">3.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用TELNET登录路由器"><span class="nav-number">3.1.</span> <span class="nav-text">使用TELNET登录路由器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由协议设置"><span class="nav-number">3.2.</span> <span class="nav-text">路由协议设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广域网协议设置"><span class="nav-number">3.3.</span> <span class="nav-text">广域网协议设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PAP"><span class="nav-number">3.3.1.</span> <span class="nav-text">PAP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CHAP"><span class="nav-number">3.3.2.</span> <span class="nav-text">CHAP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防火墙"><span class="nav-number">3.4.</span> <span class="nav-text">防火墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NAT"><span class="nav-number">3.5.</span> <span class="nav-text">NAT</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -390,14 +374,14 @@ ospf
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">1</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
