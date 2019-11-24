@@ -46,31 +46,50 @@
   };
 </script>
 
-  <meta name="description" content="do as you will">
+  <meta name="description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  串和语言   字母表: 符号的有限集合.   示例: Σ = {0,1">
 <meta name="keywords" content="IT,Embedded Software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="qidianxuan&#39;s blog">
-<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理-词法分析">
+<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;24&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
-<meta property="og:description" content="do as you will">
+<meta property="og:description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  串和语言   字母表: 符号的有限集合.   示例: Σ = {0,1">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoab.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoap.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;da.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dfaexam.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dfachart.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nfachart.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_e.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_a.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_s_t.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_st.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_sp.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_example.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_ex_chart.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_ex_p.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;death.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_fin.jpg">
+<meta property="og:updated_time" content="2019-11-24T10:18:48.707Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
 
-<link rel="canonical" href="http://qidianxuan.github.io/">
+<link rel="canonical" href="http://qidianxuan.github.io/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>qidianxuan's blog</title>
+  <title>编译原理-词法分析 | qidianxuan's blog</title>
   
 
 
@@ -175,10 +194,10 @@
             
 
   <div class="posts-expand">
-        
+      
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -192,8 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" class="post-title-link" itemprop="url">编译原理-词法分析</a>
+          编译原理-词法分析
         </h1>
 
         <div class="post-meta">
@@ -243,7 +261,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h2><ul>
+        <h2 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h2><ul>
 <li>词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务<br>  其中:<ul>
 <li>词法单元: 亦称单词, 编程语言中合法的字符串</li>
 <li>词法记号: 满足某种给定规则(模式)的词法单元<br>示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  <h3 id="串和语言"><a href="#串和语言" class="headerlink" title="串和语言"></a>串和语言</h3></li>
@@ -551,264 +569,30 @@
 <h5 id="至此-词法分析完成"><a href="#至此-词法分析完成" class="headerlink" title="至此, 词法分析完成!"></a>至此, 词法分析完成!</h5><p>参考链接:</p>
 <p> <a href="https://blog.csdn.net/zp_icenow/article/details/82661407" target="_blank" rel="noopener">https://blog.csdn.net/zp_icenow/article/details/82661407</a> </p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/23/HowtoWriteAnE-Mail/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="qidianxuan">
-      <meta itemprop="description" content="do as you will">
-    </span>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/23/HowtoWriteAnE-Mail/" rel="next" title="HowtoWriteAnE-Mail">
+                  <i class="fa fa-chevron-left"></i> HowtoWriteAnE-Mail
+                </a>
+            </div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qidianxuan's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/23/HowtoWriteAnE-Mail/" class="post-title-link" itemprop="url">HowtoWriteAnE-Mail</a>
-        </h1>
+            <span class="post-nav-divider"></span>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2019-11-23 15:09:39 / 修改时间：15:10:37" itemprop="dateCreated datePublished" datetime="2019-11-23T15:09:39+08:00">2019-11-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/English/" itemprop="url" rel="index">
-                    <span itemprop="name">English</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/23/HowtoWriteAnE-Mail/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/23/HowtoWriteAnE-Mail/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Writing-an-Email-you-should"><a href="#Writing-an-Email-you-should" class="headerlink" title="Writing an Email you should:"></a>Writing an Email you should:</h1><ol>
-<li>Use a Neutral Email Address</li>
-<li>Use a short and accurate subject header</li>
-<li>Use a proper salutation (formal)<ul>
-<li>Title + Last name</li>
-<li>Commonly used titles: ‘Mr.’ ,’Mrs.’,’Miss.’ …</li>
-</ul>
-</li>
-<li>Introduce yourself in the First Paragraph if necessary (formal)</li>
-<li>Write the actual message<ul>
-<li>Do not indent</li>
-<li>Insert a line break</li>
-<li>No more than 5 paragraphs and No more than 5 sentences in each paragraph</li>
-</ul>
-</li>
-<li>Use the correct form of leaving-taking</li>
-<li>Sign properly</li>
-<li>Proofread(校对) your email</li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/22/NetCmds/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="qidianxuan">
-      <meta itemprop="description" content="do as you will">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="qidianxuan's blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/22/NetCmds/" class="post-title-link" itemprop="url">网络综合实验常用指令汇总</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-11-22 17:50:02" itemprop="dateCreated datePublished" datetime="2019-11-22T17:50:02+08:00">2019-11-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-23 15:00:47" itemprop="dateModified" datetime="2019-11-23T15:00:47+08:00">2019-11-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index">
-                    <span itemprop="name">网络</span>
-                  </a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
     
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/22/NetCmds/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/22/NetCmds/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="实验设备"><a href="#实验设备" class="headerlink" title="实验设备"></a>实验设备</h2><ul>
-<li>模拟器 : HCL</li>
-<li>路由器 : MSR36-20</li>
-<li>交换机 : S5820V2-54QS-GE</li>
-<li>操作系统 : ComwareV7.0<h2 id="交换机"><a href="#交换机" class="headerlink" title="交换机"></a>交换机</h2><h3 id="TELNET方式登录交换机"><a href="#TELNET方式登录交换机" class="headerlink" title="TELNET方式登录交换机"></a>TELNET方式登录交换机</h3>使用如下命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[SW]int vlan &#123;vlanid&#125;</span><br><span class="line">[SW-Vlan-interface1]ip address &#123;IP地址&#125; &#123;子网掩码&#125;</span><br><span class="line">[SW-Vlan-interface1]telnet server enable</span><br><span class="line">[SW]user-interface vty 0 4</span><br><span class="line">[SW-line-vty0-4]auth password</span><br><span class="line">[SW-line-vty0-4]set auth pass simple &#123;密码&#125;</span><br><span class="line">[SW-line-vty0-4]user level-3</span><br></pre></td></tr></table></figure>
-如上,之后在PC使用如下指令即可:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">telnet &#123;之前设置的ip地址&#125;</span><br></pre></td></tr></table></figure>
-如果使用交换机,记得设置交换机ip地址</li>
-</ul>
-<h3 id="链路聚合"><a href="#链路聚合" class="headerlink" title="链路聚合"></a>链路聚合</h3><p>首先,要新建立一个聚合组</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[SW]interface bridge-aggregation &#123;聚合端口号 0-1024&#125;</span><br></pre></td></tr></table></figure>
-<p><br>注意 : 同一个聚合下的端口必须都工作在全双工模式下且速率相同<br><br>配置端口模式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW-GigabitEthernet1/0/1]duplex &#123;工作模式: fall|half|auto&#125;</span><br><span class="line">[SW-GigabitEthernet1/0/1]speed &#123;速率: 10|100|1000|auto&#125;</span><br></pre></td></tr></table></figure>
-<p>加入一个端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW]interface Ethernet &#123;端口号,以1/0/1为例&#125;</span><br><span class="line">[SW-GigabitEthernet1/0/1]port link-aggregation &#123;聚合端口号&#125;</span><br></pre></td></tr></table></figure>
-<p>如上,端口 1/0/1 被 聚合 到 组2 内,之后,可以看一下结果<br><br>显示聚合信息:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[SW]display link-aggregation summary</span><br></pre></td></tr></table></figure>
-
-<h3 id="生成树协议配置"><a href="#生成树协议配置" class="headerlink" title="生成树协议配置"></a>生成树协议配置</h3><p>首先,为了使各交换机使用相同的生成树协议标准,先在个交换机执行以下命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW]stp mode rstp</span><br><span class="line">[SW]stp patchcost-standard legacy</span><br></pre></td></tr></table></figure>
-<p>因为STP默认开启,所以此时STP已打开</p>
-<h3 id="VLAN配置"><a href="#VLAN配置" class="headerlink" title="VLAN配置"></a>VLAN配置</h3><p>创建vlan将端口加入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW]vlan &#123;vlan id&#125;</span><br><span class="line">[SW-vlan2]prot GigabitEthernet &#123;起始端口号&#125; to &#123;终止端口号&#125;</span><br></pre></td></tr></table></figure>
-<p>注意 : 也可以只写一个port来加入,这样创建的port类型为缺省值access port<br>要建立trunk port,需要首先对目标端口进行链路聚合(哪怕只有一个端口)<br>之后,进行如下设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[SW-bridge-aggregation1]port link-type trunk</span><br><span class="line">[SW-bridge-aggregation1]port trunk permit vlan &#123;源Vlan id&#125; to &#123;目标vlan id&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="路由器"><a href="#路由器" class="headerlink" title="路由器"></a>路由器</h2><h3 id="使用TELNET登录路由器"><a href="#使用TELNET登录路由器" class="headerlink" title="使用TELNET登录路由器"></a>使用TELNET登录路由器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[RT]telnet server enable  /缺省情况下，Telnet服务处于关闭状态</span><br><span class="line">[RT]line vty 0   /进入一个或多个VTY用户线视图</span><br><span class="line">[RT-line-vty0]authentication-mode scheme  /设置登录用户的认证方式为通过AAA认证</span><br><span class="line">[RT]local-user test class manage（创建用户名）</span><br><span class="line">[RT-luser-manage-test]password simple &#123;密码&#125;</span><br><span class="line">[RT-luser-manage-test]service-type telnet</span><br><span class="line">[RT-luser-manage-test]authorization-attribute user-role network-admin（设置登陆权限是超级用户最高权限）</span><br></pre></td></tr></table></figure>
-<h3 id="路由协议设置"><a href="#路由协议设置" class="headerlink" title="路由协议设置"></a>路由协议设置</h3><p>静态路由</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip route-static &#123;dest ip addr&#125; &#123;mask&#125; &#123;next-hoop&#125;</span><br></pre></td></tr></table></figure>
-<p>显示路由表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dsiplay ip routing-table</span><br></pre></td></tr></table></figure>
-<p>rip</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[RT]rip</span><br><span class="line">[RT-rip1]network &#123;指定网段地址&#125; &#123;反子网掩码&#125;</span><br></pre></td></tr></table></figure>
-<p>注意:需要添加所有需要的网段地址,包括自己</p>
-<br>
-ospf
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[RT]ospf</span><br><span class="line">[RT-ospf-1]area 0</span><br><span class="line">[RT-ospf-1-area-0.0.0.0]network &#123;要启用的ip&#125; &#123;反子网掩码&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="广域网协议设置"><a href="#广域网协议设置" class="headerlink" title="广域网协议设置"></a>广域网协议设置</h3><h4 id="PAP"><a href="#PAP" class="headerlink" title="PAP"></a>PAP</h4><p><br>pap为双向认证,需要双方都开启<br><br><br><br>验证方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial1/0]ppp authentication-mode pap</span><br><span class="line">[RA]local-user &#123;用户名&#125;</span><br><span class="line">[RA-luser-manage-ra]service-type ppp</span><br><span class="line">[RA-luser-manage-ra]password simple &#123;密码&#125;</span><br><span class="line">[RA-Serial1/0]shutdown</span><br><span class="line">[RA-Serial1/0]undo shutdwon</span><br></pre></td></tr></table></figure>
-<p>被验证方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[RB-Serial1/0]ppp pap local-user &#123;用户名&#125; password simple &#123;密码&#125;</span><br></pre></td></tr></table></figure>
-<p>注意:此处用户名与密码须与上述相同<br><br>此时只实现了单向验证,双方是无法ping通的,需要实现双向认证</p>
-<h4 id="CHAP"><a href="#CHAP" class="headerlink" title="CHAP"></a>CHAP</h4><p><br>验证方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial1/0]ppp authentication-mode chap</span><br><span class="line">[RA-Serial1/0]ppp chap user &#123;对方用户名&#125;</span><br><span class="line">[RA]local-user &#123;自己用户名&#125;</span><br><span class="line">[RA-luser-manage-ra]service-type ppp</span><br><span class="line">[RA-luser-manage-ra]password simple &#123;密码&#125;</span><br><span class="line">[RA-Serial1/0]shutdown</span><br><span class="line">[RA-Serial1/0]undo shutdwon</span><br></pre></td></tr></table></figure>
-<p>被验证方</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[RA-Serial1/0]ppp chap user &#123;对方用户名&#125;</span><br><span class="line">[RA]local-user &#123;自己用户名&#125;</span><br><span class="line">[RA-luser-manage-ra]service-type ppp</span><br><span class="line">[RA-luser-manage-ra]password simple &#123;密码&#125;</span><br><span class="line">[RA-Serial1/0]shutdown</span><br><span class="line">[RA-Serial1/0]undo shutdwon</span><br></pre></td></tr></table></figure>
-
-<h3 id="防火墙"><a href="#防火墙" class="headerlink" title="防火墙"></a>防火墙</h3><p>基于basic ACL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[RT]acl basic &#123;acl编号2000~&#125; match-order auto</span><br><span class="line">[RT-acl-inv4-adv-2001]rule &#123;permit|deny&#125; ip &#123;source|dest&#125; &#123;反子网掩码&#125;</span><br><span class="line">[RT-Eth/Ser]packet-filter 2001 &#123;inbound|outbound&#125;</span><br></pre></td></tr></table></figure>
-<p>基于advanced ACL</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[RT]acl advanced &#123;acl编号3000~&#125; match-order auto</span><br><span class="line">[RT-acl-inv4-adv-3001]rule &#123;permit|deny&#125; ip source &#123;源ip地址|any&#125; &#123;反掩码|前为any时不写&#125; destination &#123;目的ip地址|any&#125; &#123;反掩码|前为any时不写&#125;</span><br><span class="line">[RT-Eth/Ser] packet-filter 3001 &#123;inbound|outbound&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="NAT"><a href="#NAT" class="headerlink" title="NAT"></a>NAT</h3><p>首先要建立地址池</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[RT]nat address-group &#123;id&#125; </span><br><span class="line">[RT-address-group-1]address &#123;被映射ip组&#125; &#123;目标映射IP组&#125;</span><br></pre></td></tr></table></figure>
-<p>同时要建立acl,如防火墙<br><br>最后,应用在端口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[RT-Serial1/0]nat outbound &#123;acl id&#125; address-group &#123;group id&#125;</span><br></pre></td></tr></table></figure>
-<p>另外,对于具体到某个端口的nat映射,有如下指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[RT-Serial1/0]nat server protocol tcp global &#123;映射ip&#125; &#123;映射端口号&#125; inside &#123;被映射的ip&#125; &#123;被映射端口号&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
@@ -816,12 +600,10 @@ ospf
 
   </div>
 
-  
-
-
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -846,6 +628,7 @@ ospf
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#词法分析器"><span class="nav-number">1.</span> <span class="nav-text">词法分析器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#串和语言"><span class="nav-number">1.1.</span> <span class="nav-text">串和语言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#正规式-正则表达式"><span class="nav-number">1.2.</span> <span class="nav-text">正规式(正则表达式)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词法记号的识别"><span class="nav-number">1.3.</span> <span class="nav-text">词法记号的识别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有限自动机"><span class="nav-number">1.4.</span> <span class="nav-text">有限自动机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#确定的有限自动机-DFA"><span class="nav-number">1.4.1.</span> <span class="nav-text">确定的有限自动机(DFA)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不确定的有限自动机-NFA"><span class="nav-number">1.4.2.</span> <span class="nav-text">不确定的有限自动机(NFA)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DFA与NFA的对比"><span class="nav-number">1.4.3.</span> <span class="nav-text">DFA与NFA的对比</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DFA的构建"><span class="nav-number">1.4.4.</span> <span class="nav-text">DFA的构建</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#至此-词法分析完成"><span class="nav-number">1.4.4.1.</span> <span class="nav-text">至此, 词法分析完成!</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
