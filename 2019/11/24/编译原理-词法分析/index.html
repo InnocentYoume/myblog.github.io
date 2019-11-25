@@ -13,7 +13,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Arial:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=dengxian:300,300italic,400,400italic,700,700italic|Courier New:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
@@ -46,13 +46,13 @@
   };
 </script>
 
-  <meta name="description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  串和语言   字母表: 符号的有限集合.   示例: Σ = {0,1">
+  <meta name="description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”    串和语言 字母表: 符号的有限集合.   示例: Σ = {0,1">
 <meta name="keywords" content="IT,Embedded Software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理-词法分析">
 <meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;24&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
-<meta property="og:description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  串和语言   字母表: 符号的有限集合.   示例: Σ = {0,1">
+<meta property="og:description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”    串和语言 字母表: 符号的有限集合.   示例: Σ = {0,1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoab.jpg">
@@ -70,9 +70,12 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_st.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_sp.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_example.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_example.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_ex_chart.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_ex_p.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;death.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_fin.jpg">
-<meta property="og:updated_time" content="2019-11-25T02:08:46.884Z">
+<meta property="og:updated_time" content="2019-11-25T02:47:55.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
 
@@ -229,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 10:08:46" itemprop="dateModified" datetime="2019-11-25T10:08:46+08:00">2019-11-25</time>
+                <time title="修改时间：2019-11-25 10:47:55" itemprop="dateModified" datetime="2019-11-25T10:47:55+08:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,9 +274,11 @@
         <h2 id="词法分析器"><a href="#词法分析器" class="headerlink" title="词法分析器"></a>词法分析器</h2><ul>
 <li>词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务<br>  其中:<ul>
 <li>词法单元: 亦称单词, 编程语言中合法的字符串</li>
-<li>词法记号: 满足某种给定规则(模式)的词法单元<br>示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  <h2 id="串和语言"><a href="#串和语言" class="headerlink" title="串和语言"></a>串和语言</h2></li>
+<li>词法记号: 满足某种给定规则(模式)的词法单元<br>示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”</li>
 </ul>
 </li>
+</ul>
+<h2 id="串和语言"><a href="#串和语言" class="headerlink" title="串和语言"></a>串和语言</h2><ul>
 <li>字母表: 符号的有限集合.   示例: Σ = {0,1}</li>
 <li>串: 符号的有穷序列.       示例: 0110,ε(长度为0的空串)<br>运算:<ul>
 <li>连接: xy, 其中sε = εs = s</li>
@@ -285,9 +290,11 @@
 <li>连接: $ LM = \{st|s \in L 且 s \in M\} $</li>
 <li>指数: $ L^0=\{ε\}, L^i = L^{i-1}L $</li>
 <li>闭包: $ L^* = L^0\bigcup L^1\bigcup L^2\bigcup … $</li>
-<li>正闭包: $L^+ = L^1 \bigcup L^2 \bigcup … 并且 L^* = L^0 \bigcup L^+$<h2 id="正规式-正则表达式"><a href="#正规式-正则表达式" class="headerlink" title="正规式(正则表达式)"></a>正规式(正则表达式)</h2></li>
+<li>正闭包: $L^+ = L^1 \bigcup L^2 \bigcup … 并且 L^* = L^0 \bigcup L^+$</li>
 </ul>
 </li>
+</ul>
+<h2 id="正规式-正则表达式"><a href="#正规式-正则表达式" class="headerlink" title="正规式(正则表达式)"></a>正规式(正则表达式)</h2><ul>
 <li>正规式: 按照一定的定义规则, 由较简单的正规式构成, 每个正规式r表示一个<strong>语言</strong>L(r)</li>
 <li>正规式是用于说明词法单元如何对应到词法记号的模式。与非形式化的描述相比，正规式更具形式化，更加精确</li>
 <li>定义如下</li>
@@ -313,10 +320,9 @@
 <td style="text-align:center">$a \in \sum $</td>
 </tr>
 <tr>
-<td style="text-align:center">r\</td>
-<td style="text-align:center">s</td>
+<td style="text-align:center">r &amp;#124 s</td>
 <td style="text-align:center">$L(r) \bigcup L(s)$</td>
-<td>r和s为正规式</td>
+<td style="text-align:center">r和s为正规式</td>
 </tr>
 <tr>
 <td style="text-align:center">rs</td>
@@ -331,8 +337,8 @@
 </tbody>
 </table>
 </div>
-<pre><code>* 运算符优先级: * &gt; 连接运算 &gt; |
-</code></pre><ul>
+<ul>
+<li>运算符优先级: * &gt; 连接运算 &gt; |</li>
 <li>举例</li>
 </ul>
 <div class="table-container">
@@ -345,14 +351,11 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$(a\</td>
-<td style="text-align:center">b)(a\</td>
-<td style="text-align:center">b)$</td>
-<td>{aa, ab, ba, bb}</td>
+<td style="text-align:center">$(a &amp;#124 b)(a &amp;#124 b)$</td>
+<td style="text-align:center">{aa, ab, ba, bb}</td>
 </tr>
 <tr>
-<td style="text-align:center">$(a\</td>
-<td style="text-align:center">b)^*$</td>
+<td style="text-align:center">$(a &amp;#124 b)^*$</td>
 <td style="text-align:center">由a和b构成的所有串集</td>
 </tr>
 </tbody>
@@ -379,9 +382,8 @@
 <td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoab.jpg" alt="dtoab.jpg"></td>
 </tr>
 <tr>
-<td style="text-align:center">$d \rightarrow a\</td>
-<td style="text-align:center">b$</td>
-<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoaorb.jpg" alt="dtoaorb.jpg"></td>
+<td style="text-align:center">$d \rightarrow a &amp;#124 b$</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoaorb.jpg" alt="dtoaorb.jpg"></td>
 </tr>
 <tr>
 <td style="text-align:center">$d \rightarrow a^*$</td>
@@ -446,10 +448,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$ (a\</td>
-<td style="text-align:center">b)^*ab $</td>
+<td style="text-align:center">$ (a &amp;#124 b)^*ab $</td>
 <td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfaexam.jpg" alt="dfae.jpg"></td>
-<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfaexam.jpg" alt="nfae.jpg"></td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfaexam.jpg" alt="nfae.jpg"></td>
 </tr>
 <tr>
 <td style="text-align:center">状态转移表</td>
@@ -459,17 +460,23 @@
 </tbody>
 </table>
 </div>
-<pre><code>1. NFA中允许$\epsilon$转换边, 即允许$\epsilon$的输入, 而DFA不允许
-2. NFA中的move(s,a)可能是个多元集合, 而DFA中的move(s,a)最多一个元素
-3. DFA:
-    * 优点: 快速定位
-    * 缺点: 字母表过大或大部分转换状态为空集时浪费空间
-4. NFA:
-    * 优点: 表较小
-    * 缺点: 输入字符包括$\epsilon$, 一个状态对于某个字符，可能有多条输出边
-5. NFA更贴近于人们对正规式的认识
-6. DFA因为每次状态转换都是确定性的
-</code></pre><h3 id="DFA的构建"><a href="#DFA的构建" class="headerlink" title="DFA的构建"></a>DFA的构建</h3><ul>
+<ol>
+<li>NFA中允许$\epsilon$转换边, 即允许$\epsilon$的输入, 而DFA不允许</li>
+<li>NFA中的move(s,a)可能是个多元集合, 而DFA中的move(s,a)最多一个元素</li>
+<li>DFA:<ul>
+<li>优点: 快速定位</li>
+<li>缺点: 字母表过大或大部分转换状态为空集时浪费空间</li>
+</ul>
+</li>
+<li>NFA:<ul>
+<li>优点: 表较小</li>
+<li>缺点: 输入字符包括$\epsilon$, 一个状态对于某个字符，可能有多条输出边</li>
+</ul>
+</li>
+<li>NFA更贴近于人们对正规式的认识</li>
+<li>DFA因为每次状态转换都是确定性的<h3 id="DFA的构建"><a href="#DFA的构建" class="headerlink" title="DFA的构建"></a>DFA的构建</h3></li>
+</ol>
+<ul>
 <li>由自然语言描述构建<br>方法:  <ol>
 <li>列出所有可能的状态</li>
 <li>从各个状态出发, 构造边及输入字符记号</li>
@@ -499,9 +506,8 @@
 <td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_a.jpg" alt="nf_a.jpg"></td>
 </tr>
 <tr>
-<td style="text-align:center">s\</td>
-<td style="text-align:center">t</td>
-<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_s_t.jpg" alt="nf_s_t.jpg"></td>
+<td style="text-align:center">s &amp;#124 t</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_s_t.jpg" alt="nf_s_t.jpg"></td>
 </tr>
 <tr>
 <td style="text-align:center">st</td>
@@ -514,9 +520,8 @@
 </tbody>
 </table>
 </div>
-<pre><code>对于加括号的正规式(s), 使用N(s)作为其NFA  
-举例:
-</code></pre><div class="table-container">
+<p>对于加括号的正规式(s), 使用N(s)作为其NFA<br>    举例:</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -526,19 +531,21 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$(a\</td>
-<td style="text-align:center">b)^{*}ab$</td>
-<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt=""></td>
+<td style="text-align:center">$(a &amp;#124 b)^{*}ab$</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt=""></td>
 </tr>
 </tbody>
 </table>
 </div>
-<pre><code>2. NFA转化为DFA(子集构造法)
-    * 有限自动机理论: 设L为一个有不确定的有限自动机接受的集合，则存在一个接受L的确定的有限自动机
-    * DFA的一个状态是NFA的一个状态集合, 即对于一个输入$a_1a_2...a_n$ NFA可以到达所有状态为: $s_1, s_2, ..., s_k$, 这些状态的集合为DFA的一个状态
-    * 如上述的$ (a|b)^*ab $ 其NFA为![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg)  
-则对于各种输入, 有如下集合:
-</code></pre><div class="table-container">
+<ol>
+<li>NFA转化为DFA(子集构造法)<ul>
+<li>有限自动机理论: 设L为一个有不确定的有限自动机接受的集合，则存在一个接受L的确定的有限自动机</li>
+<li>DFA的一个状态是NFA的一个状态集合, 即对于一个输入$a_1a_2…a_n$ NFA可以到达所有状态为: $s_1, s_2, …, s_k$, 这些状态的集合为DFA的一个状态</li>
+<li>如上述的$ (a|b)^*ab $ 其NFA为<img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt=""><br>则对于各种输入, 有如下集合:</li>
+</ul>
+</li>
+</ol>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -571,32 +578,31 @@
 </tbody>
 </table>
 </div>
-<pre><code>依据上表列出状态转换表:  
-![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_chart.jpg)
-再画出转换图:  
-![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_p.jpg)
-
-
-3. DFA化简
-* 通常由上述方法得来的DFA并非最简的
-
-* 状态的可区分性: 存在串w, 使得从状态s开始, 对w进行状态转换, 最终停在某个接受状态; 而对从t开始的状态转换停在了某个非接收状态  
-**简言之, 对于两个状态, 若其对于所有相同的输入转换后有相同的接受状态, 则其为不可区分的, 否则可区分 **
-如上面的转换图 A与B可区分, A与C不可区分
-
-  * 途径:
-      * 根据状态是否可以区分，将状态划分成若干个集合，每个集合内的状态之间都不可区分，而任意两个集合中的元素都是可以互相区分的
-    * 依据原始的DFA，在合并后的状态基础上，建立新的状态转换关系
-</code></pre><ul>
-<li><p>但是, 化简时DFA的状态转换函数必须是一个<strong>全函数</strong>(对于所有的输入都有对应的边，比如有a，b两个输入，那么每个状态必须有a，b两个出边，否则称之为部分函数)<br>部分函数需要添加<strong>死状态</strong>变成全函数，死状态即是添加一个状态，使所有缺失的边都指向它，它自己的所有输出边也指向本身，如下图<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/death.jpg" alt=""></p>
-<pre><code>加上了死状态E
-但对于$(a|b)^*ab$, 无需加死状态
-</code></pre><ul>
-<li>化简$(a|b)^*ab$<br>首先将接受状态和非接受状态分为两个部分<br>{A, B, C}, {D}<br>对于非接受状态，判断其转换函数<br>move({A, B, C}, a} = {B}结果还是非接受状态<br>move({A, B, C}, b} = {C, D}结果出现接受状态，而这种    改变是由于状态B造成，因此将B拆分出来<br>{A, C}, {B}, {D}<br>再重复以上过程<br>move({A, C}, a} = {B}<br>move({A, C}, b} = {C}<br>发现A，C不存在例外了<br>为格式化，我们将字母变成数字表示，将A,C合并<br>其中0代表A, C, 1代表B, 2代表D</li>
-<li>最终:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_fin.jpg" alt=""></li>
+<p>依据上表列出状态转换表:<br>    <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_chart.jpg" alt=""><br>再画出转换图:<br>    <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_p.jpg" alt=""></p>
+<ol>
+<li><p>DFA化简</p>
+<ul>
+<li><p>通常由上述方法得来的DFA并非最简的</p>
+</li>
+<li><p>状态的可区分性: 存在串w, 使得从状态s开始, 对w进行状态转换, 最终停在某个接受状态; 而对从t开始的状态转换停在了某个非接收状态<br><strong>简言之, 对于两个状态, 若其对于所有相同的输入转换后有相同的接受状态, 则其为不可区分的, 否则可区分 </strong><br>如上面的转换图 A与B可区分, A与C不可区分</p>
+<ul>
+<li>途径:<ul>
+<li>根据状态是否可以区分，将状态划分成若干个集合，每个集合内的状态之间都不可区分，而任意两个集合中的元素都是可以互相区分的<ul>
+<li>依据原始的DFA，在合并后的状态基础上，建立新的状态转换关系</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p>但是, 化简时DFA的状态转换函数必须是一个<strong>全函数</strong>(对于所有的输入都有对应的边，比如有a，b两个输入，那么每个状态必须有a，b两个出边，否则称之为部分函数)<br>部分函数需要添加<strong>死状态</strong>变成全函数，死状态即是添加一个状态，使所有缺失的边都指向它，它自己的所有输出边也指向本身，如下图<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/death.jpg" alt=""><br>加上了死状态E<br>但对于$(a|b)^*ab$, 无需加死状态</p>
+</li>
+<li><p>化简$(a|b)^*ab$<br>首先将接受状态和非接受状态分为两个部分<br>{A, B, C}, {D}<br>对于非接受状态，判断其转换函数<br>move({A, B, C}, a} = {B}结果还是非接受状态<br>move({A, B, C}, b} = {C, D}结果出现接受状态，而这种    改变是由于状态B造成，因此将B拆分出来<br>{A, C}, {B}, {D}<br>再重复以上过程<br>move({A, C}, a} = {B}<br>move({A, C}, b} = {C}<br>发现A，C不存在例外了<br>为格式化，我们将字母变成数字表示，将A,C合并<br>其中0代表A, C, 1代表B, 2代表D  </p>
+</li>
+<li>最终:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_fin.jpg" alt=""></li>
+</ul>
+</li>
+</ol>
 <h4 id="至此-词法分析完成"><a href="#至此-词法分析完成" class="headerlink" title="至此, 词法分析完成!"></a>至此, 词法分析完成!</h4><p>参考链接:</p>
 <p> <a href="https://blog.csdn.net/zp_icenow/article/details/82661407" target="_blank" rel="noopener">https://blog.csdn.net/zp_icenow/article/details/82661407</a> </p>
 
