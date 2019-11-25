@@ -54,11 +54,27 @@
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
 <meta property="og:description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”  串和语言   字母表: 符号的有限集合.   示例: Σ = {0,1">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoab.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoaorb.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoap.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;da.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;FAExample.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dfaexam.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nfaexam.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dfachart.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nfachart.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_e.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_a.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_s_t.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_st.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_sp.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_example.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;death.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_fin.jpg">
-<meta property="og:updated_time" content="2019-11-24T11:15:11.080Z">
+<meta property="og:updated_time" content="2019-11-25T02:08:46.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;death.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
 
 <link rel="canonical" href="http://qidianxuan.github.io/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/">
 
@@ -205,10 +221,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-24 13:27:15 / 修改时间：19:15:11" itemprop="dateCreated datePublished" datetime="2019-11-24T13:27:15+08:00">2019-11-24</time>
+              <time title="创建时间：2019-11-24 13:27:15" itemprop="dateCreated datePublished" datetime="2019-11-24T13:27:15+08:00">2019-11-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-25 10:08:46" itemprop="dateModified" datetime="2019-11-25T10:08:46+08:00">2019-11-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -270,40 +292,129 @@
 <li>正规式是用于说明词法单元如何对应到词法记号的模式。与非形式化的描述相比，正规式更具形式化，更加精确</li>
 <li>定义如下</li>
 </ul>
-<pre><code>|正规式    |定义的语言    |备注|
-|:---:|:---:|:---:|
-|$\epsilon$    |$\{\epsilon\}$|以下定义均在字母表$\sum$中|
-|a|{a}|$a \in \sum $|
-|r\|s|$L(r) \bigcup L(s)$|r和s为正规式|
-|rs|L(r)L(s)|L(r)L(s) = L(s)L(r)|
-|$ r^* $|$  L(r)^* $|r为正规式|
-
-
-* 运算符优先级: * &gt; 连接运算 &gt; |
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">定义的语言</th>
+<th style="text-align:center">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\epsilon$</td>
+<td style="text-align:center">$\{\epsilon\}$</td>
+<td style="text-align:center">以下定义均在字母表$\sum$中</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">{a}</td>
+<td style="text-align:center">$a \in \sum $</td>
+</tr>
+<tr>
+<td style="text-align:center">r\</td>
+<td style="text-align:center">s</td>
+<td style="text-align:center">$L(r) \bigcup L(s)$</td>
+<td>r和s为正规式</td>
+</tr>
+<tr>
+<td style="text-align:center">rs</td>
+<td style="text-align:center">L(r)L(s)</td>
+<td style="text-align:center">L(r)L(s) = L(s)L(r)</td>
+</tr>
+<tr>
+<td style="text-align:center">$ r^* $</td>
+<td style="text-align:center">$  L(r)^* $</td>
+<td style="text-align:center">r为正规式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>* 运算符优先级: * &gt; 连接运算 &gt; |
 </code></pre><ul>
 <li>举例</li>
 </ul>
-<pre><code>|正规式|定义的语言|
-|:---:|:---:|:---:|
-|$(a\|b)(a\|b)$|{aa, ab, ba, bb}|
-|$(a\|b)^*$|由a和b构成的所有串集|
-</code></pre><h2 id="词法记号的识别"><a href="#词法记号的识别" class="headerlink" title="词法记号的识别"></a>词法记号的识别</h2><ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">定义的语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$(a\</td>
+<td style="text-align:center">b)(a\</td>
+<td style="text-align:center">b)$</td>
+<td>{aa, ab, ba, bb}</td>
+</tr>
+<tr>
+<td style="text-align:center">$(a\</td>
+<td style="text-align:center">b)^*$</td>
+<td style="text-align:center">由a和b构成的所有串集</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="词法记号的识别"><a href="#词法记号的识别" class="headerlink" title="词法记号的识别"></a>词法记号的识别</h2><ul>
 <li>图形化:</li>
 </ul>
-<pre><code>|正规式|状态转换图|
-|:---:|:---:|
-|$d \rightarrow a$|![dtoa.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoa2.jpg)|
-|$d \rightarrow ab$|![dtoab.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoab.jpg)|
-|$d \rightarrow a\|b$|![dtoaorb.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoaorb.jpg)|
-|$d \rightarrow a^*$ | ![dtoap.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoap.jpg)|
-|$d \rightarrow a?$(a出现1次或0次)|![da.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/da.jpg)|
-</code></pre><ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">状态转换图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$d \rightarrow a$</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoa2.jpg" alt="dtoa.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">$d \rightarrow ab$</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoab.jpg" alt="dtoab.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">$d \rightarrow a\</td>
+<td style="text-align:center">b$</td>
+<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoaorb.jpg" alt="dtoaorb.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">$d \rightarrow a^*$</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dtoap.jpg" alt="dtoap.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">$d \rightarrow a?$(a出现1次或0次)</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/da.jpg" alt="da.jpg"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
 <li>举例:</li>
 </ul>
-<pre><code>|正规式|状态转换图|
-|:---:|:---:|
-|$d \rightarrow a(a|b)^* $|![faexample.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/FAExample.jpg)|
-</code></pre><h2 id="有限自动机"><a href="#有限自动机" class="headerlink" title="有限自动机"></a>有限自动机</h2><ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">状态转换图</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$d \rightarrow a(a</td>
+<td style="text-align:center">b)^* $</td>
+<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/FAExample.jpg" alt="faexample.jpg"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="有限自动机"><a href="#有限自动机" class="headerlink" title="有限自动机"></a>有限自动机</h2><ul>
 <li>识别器: 是一个程序，取串x作为输入，当x是语言的句子时，它回答“是”，否则回答“不是”</li>
 <li>状态转换图即有限自动机, 可以作为识别器<h3 id="确定的有限自动机-DFA"><a href="#确定的有限自动机-DFA" class="headerlink" title="确定的有限自动机(DFA)"></a>确定的有限自动机(DFA)</h3></li>
 <li>DFA是一个数学模型, 包括<ul>
@@ -324,13 +435,31 @@
 </li>
 <li>举例:</li>
 </ul>
-<pre><code>|正规式|DFA|NFA|
-|:---:|:---:|:---:|
-|$ (a\|b)^*ab $|![dfae.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfaexam.jpg)|![nfae.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfaexam.jpg)|
-|状态转移表|![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfachart.jpg)|![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfachart.jpg)|
-
-
-1. NFA中允许$\epsilon$转换边, 即允许$\epsilon$的输入, 而DFA不允许
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">DFA</th>
+<th style="text-align:center">NFA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$ (a\</td>
+<td style="text-align:center">b)^*ab $</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfaexam.jpg" alt="dfae.jpg"></td>
+<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfaexam.jpg" alt="nfae.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">状态转移表</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfachart.jpg" alt=""></td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfachart.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>1. NFA中允许$\epsilon$转换边, 即允许$\epsilon$的输入, 而DFA不允许
 2. NFA中的move(s,a)可能是个多元集合, 而DFA中的move(s,a)最多一个元素
 3. DFA:
     * 优点: 快速定位
@@ -352,38 +481,97 @@
 </ol>
 </li>
 </ul>
-<pre><code>|正规式|NFA|
-|:---:|:---:|
-|$\epsilon$    |![nf_e.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_e.jpg)|
-|a            |![nf_a.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_a.jpg)|
-|s\|t        |![nf_s_t.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_s_t.jpg)|
-|st            |![nf_st.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_st.jpg)|
-|s*            |![nf_sp.jpg](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_sp.jpg)|
-
-
-对于加括号的正规式(s), 使用N(s)作为其NFA  
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">NFA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\epsilon$</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_e.jpg" alt="nf_e.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_a.jpg" alt="nf_a.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">s\</td>
+<td style="text-align:center">t</td>
+<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_s_t.jpg" alt="nf_s_t.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">st</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_st.jpg" alt="nf_st.jpg"></td>
+</tr>
+<tr>
+<td style="text-align:center">s*</td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_sp.jpg" alt="nf_sp.jpg"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>对于加括号的正规式(s), 使用N(s)作为其NFA  
 举例:
-
-
-|正规式|NFA|
-|:---:|:---:|
-|$(a\|b)^{*}ab$        |![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg)|
-
-
-2. NFA转化为DFA(子集构造法)
+</code></pre><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">正规式</th>
+<th style="text-align:center">NFA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$(a\</td>
+<td style="text-align:center">b)^{*}ab$</td>
+<td><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt=""></td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>2. NFA转化为DFA(子集构造法)
     * 有限自动机理论: 设L为一个有不确定的有限自动机接受的集合，则存在一个接受L的确定的有限自动机
     * DFA的一个状态是NFA的一个状态集合, 即对于一个输入$a_1a_2...a_n$ NFA可以到达所有状态为: $s_1, s_2, ..., s_k$, 这些状态的集合为DFA的一个状态
     * 如上述的$ (a|b)^*ab $ 其NFA为![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg)  
 则对于各种输入, 有如下集合:
-
-
-|集合名称|输入|状态|
-|:---:|:---:|:---:|
-|A|$\epsilon$|{0,1,2,4,7}|
-|B|$a$|{1,2,3,4,6,7,8}|
-|C|$b$|{1,2,4,5,6,7}|
-|D|$b, a, b$|{1,2,4,5,6,7,9}|
-依据上表列出状态转换表:  
+</code></pre><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">集合名称</th>
+<th style="text-align:center">输入</th>
+<th style="text-align:center">状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">$\epsilon$</td>
+<td style="text-align:center">{0,1,2,4,7}</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">$a$</td>
+<td style="text-align:center">{1,2,3,4,6,7,8}</td>
+</tr>
+<tr>
+<td style="text-align:center">C</td>
+<td style="text-align:center">$b$</td>
+<td style="text-align:center">{1,2,4,5,6,7}</td>
+</tr>
+<tr>
+<td style="text-align:center">D</td>
+<td style="text-align:center">$b, a, b$</td>
+<td style="text-align:center">{1,2,4,5,6,7,9}</td>
+</tr>
+</tbody>
+</table>
+</div>
+<pre><code>依据上表列出状态转换表:  
 ![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_chart.jpg)
 再画出转换图:  
 ![](https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_p.jpg)
