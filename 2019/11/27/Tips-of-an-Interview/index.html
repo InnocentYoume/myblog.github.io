@@ -46,22 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="通过词法分析, 可以将一个字符串转换成记号流, 但是记号流如何转换成语法树, 需要进行语法分析.  实质: 无结构的数据转化成有结构的数据 依据: 上下文无关语法  上下文无关文法 前言 正规式来定义一些简单的语言，能表示给定结构的固定次数的重复或者没有指定次数的重复, 但 正规式不能用于描述配对或嵌套的结构   定义 上下文无关文法是四元组( $V_T,V_N,S,P$ ) $V_T$: 终结符">
+  <meta name="description" content="Attentive Listening in an Interview1. Listen for hidden questionsInterviewer want to know 3 things: CAN you do the job? WILL you do the job? Do you fit?How to answer these questions?Use SAR model   Si">
 <meta name="keywords" content="IT,Embedded Software">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理-语法分析-上下文无关文法,文法和语言">
-<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;25&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80&#x2F;index.html">
+<meta property="og:title" content="Tips of an Interview">
+<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;27&#x2F;Tips-of-an-Interview&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
-<meta property="og:description" content="通过词法分析, 可以将一个字符串转换成记号流, 但是记号流如何转换成语法树, 需要进行语法分析.  实质: 无结构的数据转化成有结构的数据 依据: 上下文无关语法  上下文无关文法 前言 正规式来定义一些简单的语言，能表示给定结构的固定次数的重复或者没有指定次数的重复, 但 正规式不能用于描述配对或嵌套的结构   定义 上下文无关文法是四元组( $V_T,V_N,S,P$ ) $V_T$: 终结符">
+<meta property="og:description" content="Attentive Listening in an Interview1. Listen for hidden questionsInterviewer want to know 3 things: CAN you do the job? WILL you do the job? Do you fit?How to answer these questions?Use SAR model   Si">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;treeexam.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;binexam.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nfa2lex.jpg">
-<meta property="og:updated_time" content="2019-11-26T13:03:57.826Z">
+<meta property="og:updated_time" content="2019-11-27T10:43:30.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;treeexam.jpg">
 
-<link rel="canonical" href="http://qidianxuan.github.io/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/">
+<link rel="canonical" href="http://qidianxuan.github.io/2019/11/27/Tips-of-an-Interview/">
 
 
 <script id="page-configurations">
@@ -75,7 +71,7 @@
   };
 </script>
 
-  <title>编译原理-语法分析-上下文无关文法,文法和语言 | qidianxuan's blog</title>
+  <title>Tips of an Interview | qidianxuan's blog</title>
   
 
 
@@ -184,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/">
+    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/27/Tips-of-an-Interview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          编译原理-语法分析-上下文无关文法,文法和语言
+          Tips of an Interview
         </h1>
 
         <div class="post-meta">
@@ -206,24 +202,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-25 16:00:24" itemprop="dateCreated datePublished" datetime="2019-11-25T16:00:24+08:00">2019-11-25</time>
+              <time title="创建时间：2019-11-27 18:41:30 / 修改时间：18:43:30" itemprop="dateCreated datePublished" datetime="2019-11-27T18:41:30+08:00">2019-11-27</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-26 21:03:57" itemprop="dateModified" datetime="2019-11-26T21:03:57+08:00">2019-11-26</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
+                  <a href="/categories/English/" itemprop="url" rel="index">
+                    <span itemprop="name">English</span>
                   </a>
                 </span>
             </span>
@@ -243,8 +233,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/27/Tips-of-an-Interview/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/Tips-of-an-Interview/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -259,86 +249,46 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>通过<a href="https://qidianxuan.cn/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">词法分析</a>, 可以将一个字符串转换成记号流, 但是记号流如何转换成语法树, 需要进行语法分析.</p>
-<ul>
-<li>实质: 无结构的数据转化成有结构的数据</li>
-<li>依据: 上下文无关语法</li>
-</ul>
-<h2 id="上下文无关文法"><a href="#上下文无关文法" class="headerlink" title="上下文无关文法"></a>上下文无关文法</h2><ul>
-<li>前言<ul>
-<li>正规式来定义一些简单的语言，能表示给定结构的固定次数的重复或者没有指定次数的重复, 但</li>
-<li>正规式不能用于描述配对或嵌套的结构</li>
-</ul>
-</li>
-<li>定义<ul>
-<li>上下文无关文法是四元组( $V_T,V_N,S,P$ )<ul>
-<li>$V_T$: 终结符集合(非空有限集合)</li>
-<li>$V_N$: 非终结符集合( $V_T \bigcap V_N = \emptyset$ )</li>
-<li>S: 开始符号</li>
-<li>P: 产生式集合 ( 产生式形式如$ A \rightarrow \alpha 其中 A \in V_N, \alpha \in (V_T \bigcup V_N)^*$ )</li>
-</ul>
-</li>
-<li>例子<br>$ ( \{id,+, \ast ,-,(,) \} , \{expr,op\} , expr , P ) $<br>其中P包括:<br>expr $ \rightarrow $ expr op expr<br>expr $ \rightarrow $ (expr)<br>expr $ \rightarrow $ -expr<br>expr $ \rightarrow $ id<br>op $ \rightarrow $ +<br>op $ \rightarrow $ *  </li>
-</ul>
-</li>
-<li>优点<ul>
-<li>文法给出了精确的，易于理解的语法说明</li>
-<li>自动产生高效的分析器</li>
-<li>可以给语言定义出层次结构</li>
-<li>以文法为基础的语言的实现便于语言的修改</li>
-</ul>
-</li>
-<li><p>缺点</p>
-<ul>
-<li>文法只能描述编程语言的大部分语法</li>
-</ul>
-</li>
-<li><p>文法推导</p>
-<ul>
-<li>推导: 把产生式看成重写规则，把符号串中的非终结符用其产生式右部的串来代替<br>以文法 $ E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br>存在代换序列: $ E \Rightarrow E+E \Rightarrow id+E \Rightarrow id+id $<br>这个代换序列即<strong>从E到id+id的推导</strong>,  </li>
-<li>一般而言, 由上下无关文法产生的语言叫<strong>上下文无关语言</strong>  </li>
-<li>若两个文法产生相同的语言, 则称这两个文法<strong>等价</strong>  </li>
-<li>若存在S$\Rightarrow ^\ast \alpha$, 若α含非终结符, 则称其为文法的<strong>句型</strong>, 只含有终结符的句型, 称之为<strong>句子</strong>  </li>
-<li>在推导过程中, 每一步都代换句型中最左边的非终结符的推导,称之为<strong>最左推导</strong>(写作$\alpha \Rightarrow _{lm}\beta$), 类似的,存在<strong>最右推导</strong>(写作$\alpha \Rightarrow _{rm}\beta$), 最右推导亦称为<strong>规范推导</strong></li>
-</ul>
-</li>
-<li>分析树<ul>
-<li>分析树即推导的图形表示.</li>
-<li>例子:<br>以文法 $ E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/treeexam.jpg" alt="exm.png"><br>对于同样的句子, 其 <em>最终</em> 分析树是一样的, 但过程会有不同.</li>
-</ul>
-</li>
-<li>二义性<ul>
-<li>文法的二义性，是指对于符合文法规则的同一个句子，存在两种可能的分析树</li>
-<li>考虑如下的情况:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/binexam.jpg" alt=""><br>对于同一个句子, 该句子存在二义性, 分析树存在了不同, 也带来了不同的释义, 左边的为 id*(id+id), 而右边为 (id*id)+id, 但对于句子id*id+id, 一般认为(id*id)+id是正确的</li>
-<li>如何消除二义性, 一般而言, 需要加入<strong>消除二义性的规则</strong></li>
-<li>以文法 $ E \rightarrow E+E|E \ast E|id$为例:<br>可以更改为如下规则:<br>$ E \rightarrow E + T | T $<br>$ E \rightarrow E \ast F | F $<br>$ F \rightarrow id | (E) $</li>
-</ul>
-</li>
-<li>正规式可以描述的语言都可以用上下文无关文法来描述</li>
-<li>NFA转化为上下文无关文法:<ol>
-<li>确定终结符集合</li>
-<li>为每个状态引入一个非终结符$A_i$</li>
-<li>如果状态i有一个转换a到状态j, 则引入产生式$A_i \rightarrow aA_i $, 如果i是接收状态, 则引入$A_i \rightarrow \epsilon$<br>例子:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfa2lex.jpg" alt=""></li>
+        <h1 id="Attentive-Listening-in-an-Interview"><a href="#Attentive-Listening-in-an-Interview" class="headerlink" title="Attentive Listening in an Interview"></a>Attentive Listening in an Interview</h1><h2 id="1-Listen-for-hidden-questions"><a href="#1-Listen-for-hidden-questions" class="headerlink" title="1. Listen for hidden questions"></a>1. Listen for hidden questions</h2><h3 id="Interviewer-want-to-know-3-things"><a href="#Interviewer-want-to-know-3-things" class="headerlink" title="Interviewer want to know 3 things:"></a>Interviewer want to know 3 things:</h3><ol>
+<li>CAN you do the job?</li>
+<li>WILL you do the job?</li>
+<li>Do you fit?<h3 id="How-to-answer-these-questions"><a href="#How-to-answer-these-questions" class="headerlink" title="How to answer these questions?"></a>How to answer these questions?</h3>Use SAR model</li>
 </ol>
-</li>
-<li>为什么要用正规式定义词法 <ul>
-<li>词法规则非常简单,不必用上下文无关文法</li>
-<li>对于词法记号,正规式描述简洁且易于理解</li>
-<li>从正规式构造出的词法分析器效率高</li>
+<ul>
+<li>Situation</li>
+<li>Action Taken</li>
+<li>Result<h2 id="2-Listen-to-what-the-interviewer-actually-saying"><a href="#2-Listen-to-what-the-interviewer-actually-saying" class="headerlink" title="2. Listen to what the interviewer actually saying"></a>2. Listen to what the interviewer actually saying</h2></li>
+<li>tone of voice</li>
+<li>facial expression &amp; body language</li>
+<li>place yourself in interveiewer’s position<h2 id="3-Ask-for-more-information"><a href="#3-Ask-for-more-information" class="headerlink" title="3. Ask for more information"></a>3. Ask for more information</h2></li>
+<li>when you need additional information</li>
+<li>rephrase the question</li>
+<li>Interpret what you hear<h2 id="4-Listen-to-get-the-interviewer’s-attention"><a href="#4-Listen-to-get-the-interviewer’s-attention" class="headerlink" title="4. Listen to get the interviewer’s attention"></a>4. Listen to get the interviewer’s attention</h2>Active listening will allow you </li>
+<li>SPOT on them</li>
+<li>Capitalize on them</li>
 </ul>
-</li>
-<li>把词法分析从语法分析中分离出来的理由 <ul>
-<li>简化设计</li>
-<li>编译器的效率会改进</li>
-<li>编译器的可移植性加强</li>
-<li>便于编译器前端的模块划分</li>
-</ul>
-</li>
-<li>能否把词法分析并入到语法分析中,直接从字符流进行语法分析?<ul>
-<li>若把词法分析和语法分析合在一起，则必须将语言的注解和空白的规则反映在文法中，文法将大大复杂</li>
-<li>注解和空白由自己来处理的分析器，比注解和空格已由词法分析器删除的分析器要复杂得多</li>
-</ul>
-</li>
+<h1 id="Common-interview-questions"><a href="#Common-interview-questions" class="headerlink" title="Common interview questions"></a>Common interview questions</h1><h2 id="Small-talk"><a href="#Small-talk" class="headerlink" title="Small talk"></a>Small talk</h2><p>you shall:</p>
+<ul>
+<li>be poilet and friendly</li>
+<li>Keep your answers short</li>
+<li>Feel free to turn the questions back to the interviewer</li>
+<li>practice small talk on your own asking yourself simple, easy-to-answer, non-personal questions<h3 id="COMMON-QUESTION-1-Tell-me-a-little-bit-about-yourself"><a href="#COMMON-QUESTION-1-Tell-me-a-little-bit-about-yourself" class="headerlink" title="COMMON QUESTION 1: Tell me a little bit about yourself."></a>COMMON QUESTION 1: Tell me a little bit about yourself.</h3></li>
+<li>Education and work history<h3 id="COMMON-QUESTION-2-Can-you-tell-me-how-you-heard-about-this-position"><a href="#COMMON-QUESTION-2-Can-you-tell-me-how-you-heard-about-this-position" class="headerlink" title="COMMON QUESTION 2: Can you tell me how you heard about this position?"></a>COMMON QUESTION 2: Can you tell me how you heard about this position?</h3></li>
+<li>Share a little bit of reserch you have been done in order to learn the position that you are planning for.</li>
+<li>Share if someone inside the company let you know the position<h3 id="COMMON-QUESTION-3-What-attracted-you-to-ur-company"><a href="#COMMON-QUESTION-3-What-attracted-you-to-ur-company" class="headerlink" title="COMMON QUESTION 3: What attracted you to ur company?"></a>COMMON QUESTION 3: What attracted you to ur company?</h3></li>
+<li>Share what you learn about the company</li>
+<li>Why you would like to work there<h3 id="COMMON-QUESTION-4-What-would-you-say-is-your-grestest-strengthen"><a href="#COMMON-QUESTION-4-What-would-you-say-is-your-grestest-strengthen" class="headerlink" title="COMMON QUESTION 4: What would you say is your grestest strengthen?"></a>COMMON QUESTION 4: What would you say is your grestest strengthen?</h3></li>
+<li>Chance to share what you do really well as an employee and as a person</li>
+<li>You can share what your greatest strengthen is, then explain how that helps you in your current job or life<h3 id="COMMON-QUESTION-5-Can-you-tell-me-about-a-time-when-you-suffered-a-setback-and-had-to-maintain-your-enthusiasm"><a href="#COMMON-QUESTION-5-Can-you-tell-me-about-a-time-when-you-suffered-a-setback-and-had-to-maintain-your-enthusiasm" class="headerlink" title="COMMON QUESTION 5: Can you tell me about a time when you suffered a setback and had to maintain your enthusiasm?"></a>COMMON QUESTION 5: Can you tell me about a time when you suffered a setback and had to maintain your enthusiasm?</h3></li>
+<li>Know how you behave in a certain stress or situations<h3 id="COMMON-QUESTION-6-What-do-you-consider-to-be-your-greatest-weakness"><a href="#COMMON-QUESTION-6-What-do-you-consider-to-be-your-greatest-weakness" class="headerlink" title="COMMON QUESTION 6: What do you consider to be your greatest weakness?"></a>COMMON QUESTION 6: What do you consider to be your greatest weakness?</h3></li>
+<li>To be honest</li>
+<li>Share a weakness, like public speaking, or attention to detail, fear of failure.</li>
+<li>Then talk about ways you’ve worked on improvement in that area.<h3 id="COMMON-QUESTION-7-Where-do-you-see-yourself-in-five-years"><a href="#COMMON-QUESTION-7-Where-do-you-see-yourself-in-five-years" class="headerlink" title="COMMON QUESTION 7: Where do you see yourself in five years?"></a>COMMON QUESTION 7: Where do you see yourself in five years?</h3></li>
+<li>Chance to share your goals for the future.</li>
+<li>You understand what is realistically achieveable over a certain period of time.</li>
+<li>Let the interviewer know how ambitious you are with this answer.<h3 id="COMMON-QUESTION-8-Do-you-have-any-questions-for-me"><a href="#COMMON-QUESTION-8-Do-you-have-any-questions-for-me" class="headerlink" title="COMMON QUESTION 8: Do you have any questions for me?"></a>COMMON QUESTION 8: Do you have any questions for me?</h3></li>
+<li>Find out if the company is a good fit for you.</li>
+<li>The question you ask will also show how well you know ablut the company and the requirements of the position.</li>
 </ul>
 
     </div>
@@ -353,17 +303,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" rel="next" title="编译原理-词法分析">
-                  <i class="fa fa-chevron-left"></i> 编译原理-词法分析
+                <a href="/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/" rel="next" title="编译原理-语法分析-上下文无关文法,文法和语言">
+                  <i class="fa fa-chevron-left"></i> 编译原理-语法分析-上下文无关文法,文法和语言
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/27/Tips-of-an-Interview/" rel="prev" title="Tips of an Interview">
-                  Tips of an Interview <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -403,7 +350,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上下文无关文法"><span class="nav-number">1.</span> <span class="nav-text">上下文无关文法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Attentive-Listening-in-an-Interview"><span class="nav-number">1.</span> <span class="nav-text">Attentive Listening in an Interview</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Listen-for-hidden-questions"><span class="nav-number">1.1.</span> <span class="nav-text">1. Listen for hidden questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Interviewer-want-to-know-3-things"><span class="nav-number">1.1.1.</span> <span class="nav-text">Interviewer want to know 3 things:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-answer-these-questions"><span class="nav-number">1.1.2.</span> <span class="nav-text">How to answer these questions?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Listen-to-what-the-interviewer-actually-saying"><span class="nav-number">1.2.</span> <span class="nav-text">2. Listen to what the interviewer actually saying</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Ask-for-more-information"><span class="nav-number">1.3.</span> <span class="nav-text">3. Ask for more information</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Listen-to-get-the-interviewer’s-attention"><span class="nav-number">1.4.</span> <span class="nav-text">4. Listen to get the interviewer’s attention</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Common-interview-questions"><span class="nav-number">2.</span> <span class="nav-text">Common interview questions</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Small-talk"><span class="nav-number">2.1.</span> <span class="nav-text">Small talk</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-1-Tell-me-a-little-bit-about-yourself"><span class="nav-number">2.1.1.</span> <span class="nav-text">COMMON QUESTION 1: Tell me a little bit about yourself.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-2-Can-you-tell-me-how-you-heard-about-this-position"><span class="nav-number">2.1.2.</span> <span class="nav-text">COMMON QUESTION 2: Can you tell me how you heard about this position?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-3-What-attracted-you-to-ur-company"><span class="nav-number">2.1.3.</span> <span class="nav-text">COMMON QUESTION 3: What attracted you to ur company?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-4-What-would-you-say-is-your-grestest-strengthen"><span class="nav-number">2.1.4.</span> <span class="nav-text">COMMON QUESTION 4: What would you say is your grestest strengthen?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-5-Can-you-tell-me-about-a-time-when-you-suffered-a-setback-and-had-to-maintain-your-enthusiasm"><span class="nav-number">2.1.5.</span> <span class="nav-text">COMMON QUESTION 5: Can you tell me about a time when you suffered a setback and had to maintain your enthusiasm?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-6-What-do-you-consider-to-be-your-greatest-weakness"><span class="nav-number">2.1.6.</span> <span class="nav-text">COMMON QUESTION 6: What do you consider to be your greatest weakness?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-7-Where-do-you-see-yourself-in-five-years"><span class="nav-number">2.1.7.</span> <span class="nav-text">COMMON QUESTION 7: Where do you see yourself in five years?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COMMON-QUESTION-8-Do-you-have-any-questions-for-me"><span class="nav-number">2.1.8.</span> <span class="nav-text">COMMON QUESTION 8: Do you have any questions for me?</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -597,54 +544,6 @@ window.addEventListener('pjax:success', () => {
   
 
   
-      
-<script type="text/x-mathjax-config">
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script>
-
-    
 
   
 
