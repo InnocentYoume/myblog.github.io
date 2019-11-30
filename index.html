@@ -179,6 +179,231 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/30/%E5%A4%8D%E5%88%B6%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="qidianxuan">
+      <meta itemprop="description" content="do as you will">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qidianxuan's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/30/%E5%A4%8D%E5%88%B6%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/" class="post-title-link" itemprop="url">复制特殊字符到剪切板</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-30 17:10:33 / 修改时间：17:11:43" itemprop="dateCreated datePublished" datetime="2019-11-30T17:10:33+08:00">2019-11-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/" itemprop="url" rel="index">
+                    <span itemprop="name">小工具</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/11/30/%E5%A4%8D%E5%88%B6%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/30/%E5%A4%8D%E5%88%B6%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E5%88%B0%E5%89%AA%E5%88%87%E6%9D%BF/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>&lt;!DOCTYPE html&gt;</p>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>复制特殊字符</title>
+        <style>
+            .button{
+                display: inline-block;
+                border-radius: 4px;
+                background-color: #66CCFF;
+                border: none;
+                color: #FFFFFF;
+                text-align: center;
+                font-size: 22px;
+                padding: 10px;
+                width: 100px;
+                transition: all 0.5s;
+                cursor: pointer;
+                margin: 5px;
+            }
+            .button span {
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+                transition: 0.5s;
+            }
+            .button span:after {
+                content: '»';
+                position: absolute;
+                opacity: 0;
+                top: 0;
+                right: -20px;
+                transition: 0.5s;
+            }
+            .button:hover span {
+                padding-right: 25px;
+            }
+            .button:hover span:after {
+                 opacity: 1;
+                right: 0;
+            }
+            body{
+                font-family: dengxian;
+            }
+            p{
+                font-size: 18px;
+            }
+        </style>
+        <script>
+            function copyText(text){
+                var input = document.getElementById("input");
+                input.value = text;
+                input.select();
+                document.execCommand("copy");
+                alert("复制"+text+"成功");
+            } 
+        </script>
+    <link rel="alternate" href="/atom.xml" title="qidianxuan's blog" type="application/atom+xml">
+</head>
+
+    <body>
+
+        <div id="container"> 
+            <a href="http://www.qidianxuan.cn" target="_blank" rel="noopener">
+                <button class="button" style="vertical-align: middle; width:100%;background: black;"><span>返回</span></button> 
+            </a>  
+            <div id="arrow" style="width: auto;height:auto;">
+                <p style="font:dengxian">箭头</p>
+                <textarea hidden id="input"></textarea>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⟶')"><span>⟶</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⟵')"><span>⟵</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⟹')"><span>⟹</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⟸')"><span>⟸</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⇒')"><span>⇒</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⇐')"><span>⇐</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⇑')"><span>⇑</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⇓')"><span>⇓</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('→')"><span>→</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('←')"><span>←</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('↑')"><span>↑</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('↓')"><span>↓</span></button>
+            </div>
+
+            <div id="set" style="width: auto;height:auto;">
+                <p style="width: 110px;">集合运算</p>
+                <textarea hidden id="input"></textarea>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∅')"><span>∅</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∈')"><span>∈</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∉')"><span>∉</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⊂')"><span>⊂</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⊃')"><span>⊃</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⊆')"><span>⊆</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⊇')"><span>⊇</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⋂')"><span>⋂</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⋃')"><span>⋃</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⋁')"><span>⋁</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⋀')"><span>⋀</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⨄')"><span>⨄</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⨆')"><span>⨆</span></button>
+            </div>
+            <div id="math" style="width: auto;height:auto;">
+                <p style="width: 110px;">数学运算</p>
+                <textarea hidden id="input"></textarea>
+                <button class="button" style="vertical-align: middle" onclick="copyText('±')"><span>±</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('×')"><span>×</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('÷')"><span>÷</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∣')"><span>∣</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∑')"><span>∑</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∏')"><span>∏</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('≈')"><span>≈</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('≡')"><span>≡</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('≠')"><span>≠</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('≤')"><span>≤</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('≥')"><span>≥</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⋅')"><span>⋅</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∘')"><span>∘</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⨀')"><span>⨀</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⨂')"><span>⨂</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⨁')"><span>⨁</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('⊥')"><span>⊥</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∠')"><span>∠</span></button>
+            </div>
+            <div id="integral" style="width: auto;height:auto;">
+                <p style="width: 110px;">积分运算</p>
+                <textarea hidden id="input"></textarea>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∫')"><span>∫</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∬')"><span>∬</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∭')"><span>∭</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∮')"><span>∮</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∞')"><span>∞</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∇')"><span>∇</span></button>
+            </div>
+            <div id="logic" style="width: auto;height:auto;">
+                <p style="width: 110px;">逻辑运算</p>
+                <textarea hidden id="input"></textarea>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∵')"><span>∵</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∴')"><span>∴</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∀')"><span>∀</span></button>
+                <button class="button" style="vertical-align: middle" onclick="copyText('∃')"><span>∃</span></button>
+            </div>
+        </div>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+</html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/29/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E4%B8%8A%E8%80%8C%E4%B8%8B%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1336,14 +1561,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
