@@ -60,7 +60,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;LR_1.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;LALRA.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;LALRB.jpg">
-<meta property="og:updated_time" content="2019-12-09T12:20:40.473Z">
+<meta property="og:updated_time" content="2019-12-09T13:23:00.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;I0_.jpg">
 
@@ -217,7 +217,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-09 20:20:40" itemprop="dateModified" datetime="2019-12-09T20:20:40+08:00">2019-12-09</time>
+                <time title="修改时间：2019-12-09 21:23:00" itemprop="dateModified" datetime="2019-12-09T21:23:00+08:00">2019-12-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -329,27 +329,24 @@
 <li>活前缀已经含有句柄的全部符号, 则证明产生式A⟶β的右部β已经出现在栈顶</li>
 <li>活前缀只含有句柄的一部分符号,如对A⟶β1β2, 若活前缀只含一部分符号β1,则说明β1已经出现在栈顶, 当前期待看到从β2推出的符号</li>
 <li>活前缀不含句柄任何符号, 则期望产生式A⟶β右部推出的符号串<h3 id="SLR"><a href="#SLR" class="headerlink" title="SLR"></a>SLR</h3><h4 id="LR-0-项目"><a href="#LR-0-项目" class="headerlink" title="LR(0)项目"></a>LR(0)项目</h4>在右部的某个地方加点的产生式<br>  如对A ⟶ XYZ, 有A ⟶ ·XYZ 或A ⟶ X·YZ等<br>  对于A ⟶ ε, 有A ⟶ ·<br>  点的左边表示已经看到的部分, 右边为期望的部分<h4 id="LR-0-项目集"><a href="#LR-0-项目集" class="headerlink" title="LR(0)项目集"></a>LR(0)项目集</h4>若干个LR(0)项目的集合<h4 id="从文法构造识别活前缀的DFA"><a href="#从文法构造识别活前缀的DFA" class="headerlink" title="从文法构造识别活前缀的DFA"></a>从文法构造识别活前缀的DFA</h4></li>
-<li>拓广文法<br>考虑文法:  </li>
-</ul>
-<blockquote>
-<p>$ E \rightarrow E + T | T $<br>$ T \rightarrow T * F | F $<br>$ F \rightarrow (E) | id $  </p>
-</blockquote>
-<p>无法判断其起始符号, 因为起始符号E出现在了产生式右端<br>所以加入如下产生式:  </p>
-<blockquote>
-<p>$ E’ \rightarrow E $  </p>
-</blockquote>
-<p>使得起始符号位E’, 这样的文法为<strong>拓广文法</strong></p>
-<ul>
-<li><p>构建LR(0)项目集的规范族<br>  依然考虑上述文法</p>
-<ul>
-<li>闭包函数closure(I)<ol>
-<li>I的每个项目均加入closure(I)中</li>
-<li>如果A ⟶ α·Bβ在closure(I)中,且B ⟶ ·γ还不在closure(I))中的话,则将其加入(α,β可为空)</li>
-</ol>
+<li><p>拓广文法<br>考虑文法:  </p>
+<p>  E ⟶ E + T | T<br>  T ⟶ T * F | F<br>  F ⟶ (E) | id   </p>
 </li>
 </ul>
+<p>无法判断其起始符号, 因为起始符号E出现在了产生式右端<br>所以加入如下产生式:  </p>
+<pre><code>E&#39; ⟶ E  
+</code></pre><p>使得起始符号位E’, 这样的文法为<strong>拓广文法</strong></p>
+<ul>
+<li><p>构建LR(0)项目集的规范族(依然考虑上述文法)</p>
 <ol>
-<li>首先由构造状态$I_0$, 由E’ ⟶ E生成, 应包括其所有闭包<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I0_.jpg" alt=""></li>
+<li><p>闭包函数closure(I)</p>
+<ul>
+<li>I的每个项目均加入closure(I)中</li>
+<li>如果A ⟶ α·Bβ在closure(I)中,且B ⟶ ·γ还不在closure(I))中的话,则将其加入(α,β可为空)</li>
+</ul>
+</li>
+<li><p>首先由构造状态$I_0$, 由E’ ⟶ E生成, 应包括其所有闭包<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I0_.jpg" alt=""></p>
+</li>
 <li><p>再观察状态$I_0$可能碰到的符号, 计算$I_1$:=goto($I_0$,X), 即满足[A ⟶ α·Xβ]的属于$I_0$的所有项目[A ⟶ αX·β]的<strong>闭包</strong><br>如下图$I_1$为$I_0$碰到E时的情况<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I1.jpg" alt=""></p>
 </li>
 <li><p>考虑所有的情况,写作$I_x$,并作出DFA:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/Ifin.jpg" alt=""></p>
@@ -361,14 +358,13 @@
 <li>若[A ⟶ α·aβ]在$I_i$中, 并且goto($I_i$,a)=$I_j$, 那么置action[i,a]为sj</li>
 <li>若[A ⟶ α·]在$I_i$中, 那么对FOLLOW(A)中的所有a, 置action[i,a]为rj, j是产生式A ⟶ α的编号</li>
 <li>若[S’ ⟶ S·]在$I_i$中, 那么置action[i,$]为接受状态acc<br>对于状态i的goto函数  </li>
-<li>对所有的非终结符A, 如果goto($I_i$,A)=$I_j$, 那么goto[i,A]=j<br>其余为ERROR, 出现冲突则该文法并非SLR(1)  </li>
+<li><p>对所有的非终结符A, 如果goto($I_i$,A)=$I_j$, 那么goto[i,A]=j<br>其余为ERROR, 出现冲突则该文法并非SLR(1)  </p>
+<p>  以E ⟶ T·, T ⟶ T·<em>F为例<br>  FOLLOW(E)={$,+,)},则action[2,$]=action[2,+]=action[2,)]=r2<br>  action[2,</em>]=s7</p>
+</li>
 </ul>
 </li>
 </ul>
-<pre><code>    &gt; 以E ⟶ T·, T ⟶ T·\*F为例  
-    &gt; FOLLOW(E)={\$,+,)},则action[2,$]=action[2,+]=action[2,)]=r2 
-    &gt; action[2,*]=s7
-</code></pre><h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><ul>
+<h3 id="LR"><a href="#LR" class="headerlink" title="LR"></a>LR</h3><ul>
 <li>SLR文法描述能力有限<h4 id="前向搜索符"><a href="#前向搜索符" class="headerlink" title="前向搜索符"></a>前向搜索符</h4></li>
 <li>对于一个项目 A ⟶ α·β, 如果最终利用这个产生式进行规约之后, 希望看到的符号为a, 则该项目的前向搜索符为a</li>
 <li>则上述项目写为A ⟶ α·β, a<h4 id="LR-1-项目"><a href="#LR-1-项目" class="headerlink" title="LR(1)项目"></a>LR(1)项目</h4></li>
