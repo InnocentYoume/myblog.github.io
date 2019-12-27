@@ -55,7 +55,7 @@
 <meta property="og:description" content="URL简单的, 在百度输入”HTTP协议”并进行搜索, 在上面的搜索栏将会出现如下内容 https:&#x2F;&#x2F;www.baidu.com&#x2F;s?ie=UTF-8&amp;amp;wd=HTTP%E5%8D%8F%E8%AE%AE 这便是URL(Uniform Resource Locater, 统一资源定位符), 在WWW上，每一信息资源都有统一的且在网上唯一的地址, 即URL通常URL由三部分组成, 即| 协议">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;iavaEE_2.png">
-<meta property="og:updated_time" content="2019-12-27T07:58:30.719Z">
+<meta property="og:updated_time" content="2019-12-27T08:33:55.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;iavaEE_2.png">
 
@@ -187,7 +187,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="qidianxuan">
-      <meta itemprop="description" content="do as you will">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -212,7 +212,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-27 15:58:30" itemprop="dateModified" datetime="2019-12-27T15:58:30+08:00">2019-12-27</time>
+                <time title="修改时间：2019-12-27 16:33:55" itemprop="dateModified" datetime="2019-12-27T16:33:55+08:00">2019-12-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,7 +275,7 @@
 <h3 id="Servlet-1"><a href="#Servlet-1" class="headerlink" title="Servlet"></a>Servlet</h3><ul>
 <li>Servelt 是一个<strong>接口</strong>, 定义了所有servlet所需要实现的功能</li>
 <li>Servlet作为一个网页的后台处理Java程序的实现方法, 来处理前台用户的操作</li>
-<li>Methods:<ul>
+<li>一些主要的方法:<ul>
 <li>void destory()  <ul>
 <li>告知Servlet<strong>容器</strong>中止服务</li>
 </ul>
@@ -468,7 +468,41 @@
 </li>
 </ul>
 <h5 id="一个简单例子"><a href="#一个简单例子" class="headerlink" title="一个简单例子"></a>一个简单例子</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 重构doGet方法来设置一个Cookies</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletPequest request,HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException,IOException</span>&#123;</span><br><span class="line">        Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"name"</span>,<span class="string">"val"</span>);</span><br><span class="line">        cookie.setMaxAge(<span class="number">1000</span>);</span><br><span class="line">        cookie.setPath(request.getContextPath());</span><br><span class="line">        response.addCookie(cookie);<span class="comment">//关键语句</span></span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 重构doGet方法来显示当前存在的Cookies</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletPequest request,HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> ServletException,IOException</span>&#123;</span><br><span class="line">        PrintWriter pw = response.getWriter();</span><br><span class="line">        Cookie[] cookies = request.getCookies();</span><br><span class="line">        <span class="keyword">if</span>(cookies!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">for</span>(Cookie cookie:cookies)&#123;</span><br><span class="line">                String name = cookie.getName();</span><br><span class="line">                String value = cookie.getValue();</span><br><span class="line">                out.write(name+<span class="string">":"</span>+value);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="WebServlet-Annotation"><a href="#WebServlet-Annotation" class="headerlink" title="WebServlet Annotation"></a>WebServlet Annotation</h2>
+<h4 id="WebServlet中的Annotation"><a href="#WebServlet中的Annotation" class="headerlink" title="WebServlet中的Annotation"></a>WebServlet中的Annotation</h4><p>存在如下元素(主要的):</p>
+<ul>
+<li>String description<ul>
+<li>关于该Servlet的描述</li>
+</ul>
+</li>
+<li>String displayName<ul>
+<li>该Servlet的显示名字</li>
+</ul>
+</li>
+<li>WebInitParam[] initParams<ul>
+<li>Servlet初始化参数, WebInitParam为名值对</li>
+</ul>
+</li>
+<li><p>String name</p>
+<ul>
+<li><p>Servlet的name, 可以在web.xml中设置, 如:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>loginServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>LoginServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>loginServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/login<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>也可以通过Annotation配置, 如:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebSocket</span>(name = <span class="string">"loginServlet"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>String[] urlPatterns</p>
+<ul>
+<li>相当于在web.xml里servlet-mapping中的url-pattern</li>
+</ul>
+</li>
+<li>String[] value<ul>
+<li>同上</li>
+</ul>
+</li>
+</ul>
+
     </div>
 
     
@@ -528,14 +562,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个标准的Web应用构成"><span class="nav-number">2.</span> <span class="nav-text">一个标准的Web应用构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JavaEE"><span class="nav-number">3.</span> <span class="nav-text">什么是JavaEE?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC"><span class="nav-number">3.0.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet"><span class="nav-number">3.0.2.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP"><span class="nav-number">3.0.3.</span> <span class="nav-text">JSP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet-1"><span class="nav-number">3.1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletConfig"><span class="nav-number">3.2.</span> <span class="nav-text">ServletConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext"><span class="nav-number">3.3.</span> <span class="nav-text">ServletContext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServlet"><span class="nav-number">3.4.</span> <span class="nav-text">HttpServlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest"><span class="nav-number">3.5.</span> <span class="nav-text">HttpServletRequest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletResponse"><span class="nav-number">3.6.</span> <span class="nav-text">HttpServletResponse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpSession"><span class="nav-number">3.7.</span> <span class="nav-text">HttpSession</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">3.8.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个简单例子"><span class="nav-number">3.8.0.1.</span> <span class="nav-text">一个简单例子</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WebServlet-Annotation"><span class="nav-number">4.</span> <span class="nav-text">WebServlet Annotation</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个标准的Web应用构成"><span class="nav-number">2.</span> <span class="nav-text">一个标准的Web应用构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JavaEE"><span class="nav-number">3.</span> <span class="nav-text">什么是JavaEE?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC"><span class="nav-number">3.0.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet"><span class="nav-number">3.0.2.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP"><span class="nav-number">3.0.3.</span> <span class="nav-text">JSP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet-1"><span class="nav-number">3.1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletConfig"><span class="nav-number">3.2.</span> <span class="nav-text">ServletConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext"><span class="nav-number">3.3.</span> <span class="nav-text">ServletContext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServlet"><span class="nav-number">3.4.</span> <span class="nav-text">HttpServlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest"><span class="nav-number">3.5.</span> <span class="nav-text">HttpServletRequest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletResponse"><span class="nav-number">3.6.</span> <span class="nav-text">HttpServletResponse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpSession"><span class="nav-number">3.7.</span> <span class="nav-text">HttpSession</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">3.8.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个简单例子"><span class="nav-number">3.8.0.1.</span> <span class="nav-text">一个简单例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebServlet中的Annotation"><span class="nav-number">3.8.1.</span> <span class="nav-text">WebServlet中的Annotation</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">qidianxuan</p>
-  <div class="site-description" itemprop="description">do as you will</div>
+  <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
