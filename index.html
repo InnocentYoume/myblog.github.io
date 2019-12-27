@@ -179,6 +179,252 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/12/20/JavaEE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="qidianxuan">
+      <meta itemprop="description" content="do as you will">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qidianxuan's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/20/JavaEE/" class="post-title-link" itemprop="url">JavaEE</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-12-20 17:56:39" itemprop="dateCreated datePublished" datetime="2019-12-20T17:56:39+08:00">2019-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-12-27 10:59:33" itemprop="dateModified" datetime="2019-12-27T10:59:33+08:00">2019-12-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/20/JavaEE/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/20/JavaEE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>简单的, 在百度输入”HTTP协议”并进行搜索, 在上面的搜索栏将会出现如下内容</p>
+<blockquote>
+<p><a href="https://www.baidu.com/s?ie=UTF-8&amp;wd=HTTP%E5%8D%8F%E8%AE%AE" target="_blank" rel="noopener">https://www.baidu.com/s?ie=UTF-8&amp;wd=HTTP%E5%8D%8F%E8%AE%AE</a></p>
+</blockquote>
+<p>这便是URL(Uniform Resource Locater, 统一资源定位符), 在WWW上，每一信息资源都有统一的且在网上唯一的地址, 即URL<br>通常URL由三部分组成, 即<br>| 协议 | 主机 | 路径 |<br>而对于 “?” 之后的内容, 叫做<strong>查询字符串</strong>(QueryString), 以名值对的形式出现,以”&amp;”分割<br>则对于上述的链接, 可分为如下内容:</p>
+<blockquote>
+<p>协议: HTTPS<br>主机: www.baidu.com<br>路径: /s<br>查询字符串: ie,值为UTF-8; wd,值为HTTP%E5%8D%8F%E8%AE%AE, 即HTTP的UTF-8编码</p>
+</blockquote>
+<p>一般而言, 你所访问的网页由HTML 或jsp 完成, 仅提供前端的显示, 后端的处理, 即收到数据所做的操作, 就需要后端进行处理, 而处理的过程, 由JavaEE的各种技术来提供</p>
+<h2 id="一个标准的Web应用构成"><a href="#一个标准的Web应用构成" class="headerlink" title="一个标准的Web应用构成"></a>一个标准的Web应用构成</h2><p>一般而言, 一个基于JavaEE的Web应用构成结构如下:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/javaEE_1.png" alt=""></p>
+<h2 id="什么是JavaEE"><a href="#什么是JavaEE" class="headerlink" title="什么是JavaEE?"></a>什么是JavaEE?</h2><p>Java EE, Java 平台企业版(Java Platform Enterprise Edition), 之前称为Java 2 Platform, Enterprise Edition (J2EE). 狭义的 Java EE 是 Sun 公司为企业级应用推出的标准平台，用来开发B/S架构软件，可以说是一个框架，也可以说是一种规范. JavaEE包含众多技术, 重要的有</p>
+<h4 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h4><p>Java 数据库连接, (Java Database Connectivity, JDBC)是Java语言中用来规范客户端程序如何来访问数据库的应用程序接口, 提供了诸如查询和更新数据库中数据的方法.</p>
+<h4 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h4><p>Servlet(Server Applet), 是用 Java 编写的服务器端程序. 其主要功能在于交互式地浏览和修改数据, 生成动态 Web 内容.<br>狭义的 Servlet 是指 Java 语言实现的一个接口，广义的 Servlet 是指任何实现了这个 Servlet 接口的类，一般情况下，人们将 Servlet 理解为后者。</p>
+<h4 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h4><p>JSP（JavaServer Pages）是由 Sun 公司主导创建的一种动态网页技术标准. JSP 部署于网络服务器上, 可以响应客户端发送的请求, 并根据请求内容动态地生成 HTML、XML 或其他格式文档的 Web 网页, 然后返回给请求者.  </p>
+<p>当然还有众多主要技术, 不做详细介绍.</p>
+<h3 id="Servlet-1"><a href="#Servlet-1" class="headerlink" title="Servlet"></a>Servlet</h3><ul>
+<li>Servelt 是一个<strong>接口</strong>, 定义了所有servlet所需要实现的功能</li>
+<li>Servlet作为一个网页的后台处理Java程序, 来处理前台用户的操作</li>
+<li>Methods:<ul>
+<li>void destory()  <ul>
+<li>告知Servlet<strong>容器</strong>中止服务</li>
+</ul>
+</li>
+<li>ServletConfig getServletConfig()  <ul>
+<li>获得用于初始化Servlet的一个ServletConfig实例</li>
+<li>将可能抛出ServletException  </li>
+</ul>
+</li>
+<li>String getServletInfo()  <ul>
+<li>获取Servlet的信息, 如作者, 版本, 版权等</li>
+</ul>
+</li>
+<li>void init(ServletConfig config)  <ul>
+<li>由Servlet容器自动调用来初始化Servlet</li>
+<li>将可能抛出ServletException </li>
+</ul>
+</li>
+<li>void service(ServletRequest req, ServletResponse res) <ul>
+<li>服务函数, 定义Servlet如何对请求做出相应</li>
+<li>可能抛出ServletException和IOException<h3 id="ServletConfig"><a href="#ServletConfig" class="headerlink" title="ServletConfig"></a>ServletConfig</h3>用于Servlet初始化时传递参数的<strong>接口</strong><br>一般而言, 每个ServletConfig对应一个Servlet<br>方法: </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>String getInitParameter(String name)<br>  返回此Servlet实例的名称, 考虑如下web.xml中的参数</p>
+  <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>ServletParam<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>val<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    ```  </span><br><span class="line"></span><br><span class="line">    通过 getInitParameter("ServletParam")将返回val</span><br><span class="line">* ServletContext getServletContext()  </span><br><span class="line">    返回正在执行的ServletContext的调用, 考虑如下web.xml</span><br><span class="line">* Enumeration<span class="tag">&lt;<span class="name">String</span>&gt;</span> getInitParameterNames()</span><br><span class="line">    返回Servlet初始化参数的名字</span><br><span class="line">* String getServletName()</span><br><span class="line">    返回该Servlet实例的名字</span><br><span class="line">### ServletContext</span><br><span class="line">定义了一系列Servlet应该如何与其容器交流的方法的**接口**  </span><br><span class="line">一般而言, 一个WebApp对应一个ServletContext</span><br><span class="line">这里有个很好的[说明](https://www.cnblogs.com/baoendemao/p/3804756.html)</span><br><span class="line">几个比较重要的方法:</span><br><span class="line">* String getContextPath()</span><br><span class="line">    * 返回web应用的上下文路径, 若部署了应用app, 则返回"/app"</span><br><span class="line">* ServletContext getContext(String uripath)</span><br><span class="line">    * uripath为在此web应用容器内另一个web应用的上下文理解</span><br><span class="line">* Set<span class="tag">&lt;<span class="name">String</span>&gt;</span> getResourcePaths(String path)</span><br><span class="line">    * 返回path下所有资源路径的集合</span><br><span class="line">* URL getResources(String path)</span><br><span class="line">    * 根据path返回URL</span><br><span class="line">* InputStream getResourceAsStream(String path)</span><br><span class="line">    * 根据path返回数据流</span><br><span class="line">* String getRealPath</span><br><span class="line">    * 根据虚拟路径返回真实路径  </span><br><span class="line">* String getInitParameter(String name)</span><br><span class="line">    * 同ServletConfig中的getInitParameter,但书写方式不同</span><br><span class="line"></span><br><span class="line">        ```html</span><br><span class="line">        <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>param<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>val<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="HttpServlet"><a href="#HttpServlet" class="headerlink" title="HttpServlet"></a>HttpServlet</h3></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/12/10/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E7%BF%BB%E8%AF%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="qidianxuan">
+      <meta itemprop="description" content="do as you will">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qidianxuan's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/12/10/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E7%BF%BB%E8%AF%91/" class="post-title-link" itemprop="url">编译原理-语义分析-语法制导的翻译</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-10 10:17:10 / 修改时间：11:03:48" itemprop="dateCreated datePublished" datetime="2019-12-10T10:17:10+08:00">2019-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">编译原理</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/12/10/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E7%BF%BB%E8%AF%91/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/10/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E7%BF%BB%E8%AF%91/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="语法制导"><a href="#语法制导" class="headerlink" title="语法制导"></a>语法制导</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
+<li>对应每一个产生式编制一个语义子程序, 当一个产生式获得匹配时, 调用相应的语义子程序实现语义检查与翻译</li>
+<li>带属性和规则的上下文无关文法, 称之为<strong>基础文法</strong><h3 id="翻译方案"><a href="#翻译方案" class="headerlink" title="翻译方案"></a>翻译方案</h3>在产生式的右部的适当位置, 插入相应的语义动作, 按照分析的进程, 执行遇到的语义动作<h2 id="属性文法-上下文无关文法与程序语义的桥梁"><a href="#属性文法-上下文无关文法与程序语义的桥梁" class="headerlink" title="属性文法-上下文无关文法与程序语义的桥梁"></a>属性文法-上下文无关文法与程序语义的桥梁</h2></li>
+<li>亦称为翻译文法</li>
+<li>在上下文无关文法的基础上, 为每个文法符号配备若干相关的”值”(属性)<ul>
+<li>属性代表与文法相关的信息</li>
+<li>属性可以进行运算与传递</li>
+<li>语义规则: 对于文法的每个产生式都配备了一组属性的计算规则<h2 id="基础文法"><a href="#基础文法" class="headerlink" title="基础文法"></a>基础文法</h2></li>
+</ul>
+</li>
+<li>每个文法符号有一组属性</li>
+<li>每个文法产生式A ⟶ α, 有一组形式为b:=f(c1,c2,…,ck)的语义规则, 其中f为函数, b和c1,c2,…,ck是该产生式文法符号的属性<ul>
+<li>综合属性:如果b是A的属性, c1,c2,…,ck是产生式右部文法符号的属性或A的其他属性<br>属性值由分析树中其子节点的属性值来计算</li>
+<li>继承属性:如果b是产生式右部某个文法符号X的属性, c1,c2,…,ck是产生式右部文法符号的属性或A的其他属性<br>属性值由结点的兄弟结点及父结点的属性值来计算</li>
+<li>对<strong>语义规则</strong>b:=f(c1,c2,…,ck), 函数f通常为表达式(形如T.val=F.val), 或者一些产生副作用的操作(形如print(E.val)打印), 可以看作产生式左部非终结符的<em>虚拟综合属性</em></li>
+</ul>
+</li>
+<li>一般而言:<ul>
+<li>终结符只有综合属性, 并且这些综合属性通常由词法分析器提供</li>
+<li>非终结符既可以有综合属性也可以有继承属性, 文法的开始符号一般没有继承属性, 除非特殊说明</li>
+<li>文法符号的综合属性集和继承属性集的交集应当为空</li>
+<li>对出现在<em>产生式右边的继承属性</em>以及出现在<em>产生式左边的综合属性</em>都必须提供一个计算规则, 属性计算规则中只能使用相应产生式中的文法符号的属性</li>
+<li>对出现在<em>产生式左边的继承属性</em>以及出现在<em>产生式右边的综合属性</em>不由所给的产生式的属性计算规则进行计算, 他们由其他产生式的属性规则计算或由属性计算器的参数提供<h3 id="注释分析树-分析树-属性"><a href="#注释分析树-分析树-属性" class="headerlink" title="注释分析树: 分析树+属性"></a>注释分析树: 分析树+属性</h3></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/12/08/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%E5%88%86%E6%9E%90/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -210,7 +456,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-09 21:26:49" itemprop="dateModified" datetime="2019-12-09T21:26:49+08:00">2019-12-09</time>
+                <time title="修改时间：2019-12-10 10:17:06" itemprop="dateModified" datetime="2019-12-10T10:17:06+08:00">2019-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -738,7 +984,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-08 16:29:15" itemprop="dateModified" datetime="2019-12-08T16:29:15+08:00">2019-12-08</time>
+                <time title="修改时间：2019-12-10 10:17:09" itemprop="dateModified" datetime="2019-12-10T10:17:09+08:00">2019-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -866,8 +1112,8 @@
 <p>  <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/ChartExam.jpg" alt=""></p>
 <ul>
 <li>若文法为二义的, 将会出现一格内有两项的问题.</li>
-<li>算法实现:  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入: 串w和文法G的分析表M</span></span><br><span class="line"><span class="comment">//输出: 是否符合文法, 符合则输出w的左推导</span></span><br><span class="line"></span><br><span class="line">ip = w$的第一个符号</span><br><span class="line">X = 栈顶元素</span><br><span class="line"><span class="keyword">while</span>(X!=$)&#123;</span><br><span class="line">    <span class="keyword">if</span> (X为a) 把X弹出并把ip推向下一个符号</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(X为终结符)</span><br><span class="line">        把X从栈顶弹出, ip入栈, ip指向下一个符号</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(M[X,a]为ERROR)</span><br><span class="line">        error();</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(M[X,a]为X ⟶ Y1Y2...Yk)&#123;</span><br><span class="line">        输出产生式;</span><br><span class="line">        栈中弹出X;</span><br><span class="line">        把Yk...Y2Y1依次压入栈, Y1在栈顶</span><br><span class="line">    &#125; </span><br><span class="line">    令X为栈顶元素;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-<li>分析举例: 对输入 id * id + id</li>
+<li>算法实现:  <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//输入: 串w和文法G的分析表M</span></span><br><span class="line"><span class="comment">//输出: 是否符合文法, 符合则输出w的左推导</span></span><br><span class="line"></span><br><span class="line">ip = w$的第一个符号</span><br><span class="line">X = 栈顶元素</span><br><span class="line"><span class="keyword">while</span>(X!=$)&#123;</span><br><span class="line">    <span class="keyword">if</span> (X为a) 把X弹出并把ip推向下一个符号</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(X为终结符)</span><br><span class="line">        把X从栈顶弹出, ip入栈, ip指向下一个符号</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(M[X,a]为ERROR)</span><br><span class="line">        error();</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(M[X,a]为X ⟶ Y1Y2...Yk)&#123;</span><br><span class="line">        输出产生式;</span><br><span class="line">        栈中弹出X;</span><br><span class="line">        把Yk...Y2Y1依次压入栈, Y1在栈顶</span><br><span class="line">    &#125; </span><br><span class="line">    令X为栈顶元素;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
 </ul>
@@ -1053,7 +1299,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-29 18:52:12" itemprop="dateModified" datetime="2019-11-29T18:52:12+08:00">2019-11-29</time>
+                <time title="修改时间：2019-12-10 09:47:01" itemprop="dateModified" datetime="2019-12-10T09:47:01+08:00">2019-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1223,7 +1469,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-08 16:29:13" itemprop="dateModified" datetime="2019-12-08T16:29:13+08:00">2019-12-08</time>
+                <time title="修改时间：2019-12-17 21:56:21" itemprop="dateModified" datetime="2019-12-17T21:56:21+08:00">2019-12-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1628,7 +1874,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/23/HowtoWriteAnE-Mail/" class="post-title-link" itemprop="url">How to Write An E-Mail</a>
+            <a href="/2019/11/23/HowtoWriteAnE-Mail/" class="post-title-link" itemprop="url">How to Write an E-Mail</a>
         </h1>
 
         <div class="post-meta">
@@ -1645,7 +1891,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-27 18:43:05" itemprop="dateModified" datetime="2019-11-27T18:43:05+08:00">2019-11-27</time>
+                <time title="修改时间：2019-12-10 09:46:25" itemprop="dateModified" datetime="2019-12-10T09:46:25+08:00">2019-12-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1871,14 +2117,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
