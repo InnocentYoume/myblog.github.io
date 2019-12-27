@@ -289,7 +289,7 @@
 <li>选择那个产生式进行规约?</li>
 </ul>
 </li>
-</ul>
+</ul><a id="more"></a>
 <h2 id="LR分析"><a href="#LR分析" class="headerlink" title="LR分析"></a>LR分析</h2><p>LR分析器处理LR(k)文法</p>
 <ul>
 <li>k指决定分析动作时向前看的符号个数, k=1时省略</li>
@@ -347,11 +347,11 @@
 <li>如果A ⟶ α·Bβ在closure(I)中,且B ⟶ ·γ还不在closure(I))中的话,则将其加入(α,β可为空)</li>
 </ul>
 </li>
-<li><p>首先由构造状态$I_0$, 由E’ ⟶ E生成, 应包括其所有闭包<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I0_.jpg" alt=""></p>
+<li><p>首先由构造状态$I_0$, 由E’ ⟶ E生成, 应包括其所有闭包<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I0_.jpg" alt></p>
 </li>
-<li><p>再观察状态$I_0$可能碰到的符号, 计算$I_1$:=goto($I_0$,X), 即满足[A ⟶ α·Xβ]的属于$I_0$的所有项目[A ⟶ αX·β]的<strong>闭包</strong><br>如下图$I_1$为$I_0$碰到E时的情况<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I1.jpg" alt=""></p>
+<li><p>再观察状态$I_0$可能碰到的符号, 计算$I_1$:=goto($I_0$,X), 即满足[A ⟶ α·Xβ]的属于$I_0$的所有项目[A ⟶ αX·β]的<strong>闭包</strong><br>如下图$I_1$为$I_0$碰到E时的情况<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/I1.jpg" alt></p>
 </li>
-<li><p>考虑所有的情况,写作$I_x$,并作出DFA:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/Ifin.jpg" alt=""></p>
+<li><p>考虑所有的情况,写作$I_x$,并作出DFA:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/Ifin.jpg" alt></p>
 </li>
 <li><p>从DFA构造SLR分析表<br>对于状态i从$I_i$构造, 它的action函数如下确定:</p>
 </li>
@@ -391,7 +391,7 @@
 <blockquote>
 <p>S’ ⟶ S<br>S ⟶ BB<br>B ⟶ bB<br>B ⟶ a</p>
 </blockquote>
-<p>  参照SLR的方法构建状态转换图:<br>  <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/LR_1.jpg" alt=""></p>
+<p>  参照SLR的方法构建状态转换图:<br>  <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/LR_1.jpg" alt></p>
 </li>
 <li><p>构造分析表:<br>从$I_i$构造分析器的状态i, 器action函数如下确定:  </p>
 <ul>
@@ -414,7 +414,7 @@
 </ul>
 </li>
 </ul>
-<p>合并前:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/LALRA.jpg" alt=""><br>合并后:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/LALRB.jpg" alt=""></p>
+<p>合并前:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/LALRA.jpg" alt><br>合并后:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/LALRB.jpg" alt></p>
 <h4 id="合并后可能引起的冲突"><a href="#合并后可能引起的冲突" class="headerlink" title="合并后可能引起的冲突"></a>合并后可能引起的冲突</h4><ul>
 <li>不会引起新的移进-规约冲突</li>
 <li>有可能引起新的规约-规约冲突</li>

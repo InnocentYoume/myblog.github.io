@@ -46,13 +46,13 @@
   };
 </script>
 
-  <meta name="description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”    串和语言 字母表: 符号的有限集合.   示例: Σ = {0,1">
+  <meta name="description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”">
 <meta name="keywords" content="IT,Embedded Software">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编译原理-词法分析">
 <meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;24&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
-<meta property="og:description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”    串和语言 字母表: 符号的有限集合.   示例: Σ = {0,1">
+<meta property="og:description" content="词法分析器 词法分析器: 把构成源程序的字符流翻译成记号(token)流，还完成和用户接口的一些任务  其中: 词法单元: 亦称单词, 编程语言中合法的字符串 词法记号: 满足某种给定规则(模式)的词法单元示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoab.jpg">
@@ -283,7 +283,7 @@
 <li>词法记号: 满足某种给定规则(模式)的词法单元<br>示例: 对于词法记号NUM, 其词法单元可能有3.1, 10, 2.8E12等数字, 其”模式”即”认定为数字的字符串”</li>
 </ul>
 </li>
-</ul>
+</ul><a id="more"></a>
 <h2 id="串和语言"><a href="#串和语言" class="headerlink" title="串和语言"></a>串和语言</h2><ul>
 <li>字母表: 符号的有限集合.   示例: Σ = {0,1}</li>
 <li>串: 符号的有穷序列.       示例: 0110,ε(长度为0的空串)<br>运算:<ul>
@@ -459,8 +459,8 @@
 </tr>
 <tr>
 <td style="text-align:center">状态转移表</td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfachart.jpg" alt=""></td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfachart.jpg" alt=""></td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/dfachart.jpg" alt></td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfachart.jpg" alt></td>
 </tr>
 </tbody>
 </table>
@@ -537,7 +537,7 @@
 <tbody>
 <tr>
 <td style="text-align:center">$\sf (a   &#124;  b)^{*}ab$</td>
-<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt=""></td>
+<td style="text-align:center"><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt></td>
 </tr>
 </tbody>
 </table>
@@ -546,7 +546,7 @@
 <li>NFA转化为DFA(子集构造法)<ul>
 <li>有限自动机理论: 设L为一个有不确定的有限自动机接受的集合，则存在一个接受L的确定的有限自动机</li>
 <li>DFA的一个状态是NFA的一个状态集合, 即对于一个输入$a_1a_2…a_n$NFA可以到达所有状态为:$s_1, s_2, …, s_k$, 这些状态的集合为DFA的一个状态</li>
-<li>如上述的$(a|b)^*ab$其NFA为<img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt=""><br>则对于各种输入, 有如下集合:</li>
+<li>如上述的$(a|b)^*ab$其NFA为<img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_example.jpg" alt><br>则对于各种输入, 有如下集合:</li>
 </ul>
 </li>
 </ol>
@@ -583,7 +583,7 @@
 </tbody>
 </table>
 </div>
-<p>依据上表列出状态转换表:<br>    <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_chart.jpg" alt=""><br>再画出转换图:<br>    <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_p.jpg" alt=""></p>
+<p>依据上表列出状态转换表:<br>    <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_chart.jpg" alt><br>再画出转换图:<br>    <img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_ex_p.jpg" alt></p>
 <ol>
 <li><p>DFA化简</p>
 <ul>
@@ -600,11 +600,11 @@
 </li>
 </ul>
 </li>
-<li><p>但是, 化简时DFA的状态转换函数必须是一个<strong>全函数</strong>(对于所有的输入都有对应的边，比如有a，b两个输入，那么每个状态必须有a，b两个出边，否则称之为部分函数)<br>部分函数需要添加<strong>死状态</strong>变成全函数，死状态即是添加一个状态，使所有缺失的边都指向它，它自己的所有输出边也指向本身，如下图<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/death.jpg" alt=""><br>加上了死状态E<br>但对于$\sf (a|b)^*ab$, 无需加死状态</p>
+<li><p>但是, 化简时DFA的状态转换函数必须是一个<strong>全函数</strong>(对于所有的输入都有对应的边，比如有a，b两个输入，那么每个状态必须有a，b两个出边，否则称之为部分函数)<br>部分函数需要添加<strong>死状态</strong>变成全函数，死状态即是添加一个状态，使所有缺失的边都指向它，它自己的所有输出边也指向本身，如下图<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/death.jpg" alt><br>加上了死状态E<br>但对于$\sf (a|b)^*ab$, 无需加死状态</p>
 </li>
 <li><p>化简$\sf (a|b)^*ab$<br>首先将接受状态和非接受状态分为两个部分<br>{A, B, C}, {D}<br>对于非接受状态，判断其转换函数<br>move({A, B, C}, a} = {B}结果还是非接受状态<br>move({A, B, C}, b} = {C, D}结果出现接受状态，而这种    改变是由于状态B造成，因此将B拆分出来<br>{A, C}, {B}, {D}<br>再重复以上过程<br>move({A, C}, a} = {B}<br>move({A, C}, b} = {C}<br>发现A，C不存在例外了<br>为格式化，我们将字母变成数字表示，将A,C合并<br>其中0代表A, C, 1代表B, 2代表D  </p>
 </li>
-<li>最终:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_fin.jpg" alt=""></li>
+<li>最终:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nf_fin.jpg" alt></li>
 </ul>
 </li>
 </ol>
