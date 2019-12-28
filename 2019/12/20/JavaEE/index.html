@@ -55,7 +55,7 @@
 <meta property="og:description" content="URL简单的, 在百度输入”HTTP协议”并进行搜索, 在上面的搜索栏将会出现如下内容 https:&#x2F;&#x2F;www.baidu.com&#x2F;s?ie=UTF-8&amp;amp;wd=HTTP%E5%8D%8F%E8%AE%AE 这便是URL(Uniform Resource Locater, 统一资源定位符), 在WWW上，每一信息资源都有统一的且在网上唯一的地址, 即URL通常URL由三部分组成, 即| 协议">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;iavaEE_2.png">
-<meta property="og:updated_time" content="2019-12-28T04:01:46.383Z">
+<meta property="og:updated_time" content="2019-12-28T04:25:08.825Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;iavaEE_2.png">
 
@@ -212,7 +212,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-28 12:01:46" itemprop="dateModified" datetime="2019-12-28T12:01:46+08:00">2019-12-28</time>
+                <time title="修改时间：2019-12-28 12:25:08" itemprop="dateModified" datetime="2019-12-28T12:25:08+08:00">2019-12-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -546,7 +546,8 @@
 </ul>
 </li>
 </ul>
-<h3 id="Java-Web-Events-和-Listener"><a href="#Java-Web-Events-和-Listener" class="headerlink" title="Java Web Events 和 Listener"></a>Java Web Events 和 Listener</h3><h4 id="ServletContextEvent"><a href="#ServletContextEvent" class="headerlink" title="ServletContextEvent"></a>ServletContextEvent</h4><ul>
+<h3 id="Java-Web-Events-和-Listener"><a href="#Java-Web-Events-和-Listener" class="headerlink" title="Java Web Events 和 Listener"></a>Java Web Events 和 Listener</h3><p>注意: Event通常为类, Listener为接口</p>
+<h4 id="ServletContextEvent"><a href="#ServletContextEvent" class="headerlink" title="ServletContextEvent"></a>ServletContextEvent</h4><ul>
 <li>父类为EventObject</li>
 <li>事件类, 当一个Servlet的Context改变时发生</li>
 <li>构造函数: ServletContextEvent(ServletContext source)</li>
@@ -608,10 +609,57 @@
 <li>构造函数: ServletRequestAttributeEvent(ServletContext sc, ServletRequest request, String name, Object value)</li>
 <li>监听: <strong>ServletRequestAttributeEvent</strong><ul>
 <li>void attributeAdded(ServletRequestAttributeEvent srae)<ul>
-<li>当Servlet添加一个新属性时收到通知</li>
+<li>当ServletRequest添加一个新属性时收到通知</li>
 </ul>
 </li>
-<li>void aattributeRemoved(ServletRequestAttributeEvent srae)<br>  * </li>
+<li>void attributeRemoved(ServletRequestAttributeEvent srae)<ul>
+<li>当ServletRequest移除一个新属性时收到通知</li>
+</ul>
+</li>
+<li>void attributeReplaced(ServletRequestAttributeEvent srae)<ul>
+<li>当ServletRequest替换一个新属性时收到通知</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="HttpSessionEvent"><a href="#HttpSessionEvent" class="headerlink" title="HttpSessionEvent"></a>HttpSessionEvent</h4><ul>
+<li>父类为EventObject</li>
+<li>事件类, 当session发生改变时发生</li>
+<li>构造函数: HttpSessionEvent(HttpSession source)</li>
+<li>监听: <strong>HttpSessionListener</strong><ul>
+<li>void sessionCreated(HttpSessionEvent se)<ul>
+<li>当session被创建时收到通知</li>
+</ul>
+</li>
+<li>void sessionDestoryed(HttpSessionEvent se)<ul>
+<li>当session将要被销毁时收到通知</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="HttpSessionBindingEvent"><a href="#HttpSessionBindingEvent" class="headerlink" title="HttpSessionBindingEvent"></a>HttpSessionBindingEvent</h4><ul>
+<li>父类为HttpSessionEvent</li>
+<li>事件类, 当一个session绑定或解除绑定时, 此事件将发送给监听对象<ul>
+<li>调用HttpSession.setAttribute绑定对象</li>
+<li>调用HttpSession.removeAttribute取消绑定</li>
+</ul>
+</li>
+<li>构造函数<ul>
+<li>HttpSessionBindingEvent(HttpSession session, String name)</li>
+<li>HttpSessionBindingEvent(HttpSession session, String name, Object value)</li>
+</ul>
+</li>
+<li>监听: <strong>HttpSessionBindingListener</strong><ul>
+<li>void valueBound(HttpSessionBindingEvent event)<ul>
+<li>当有一个object绑定到session时收到通知</li>
+</ul>
+</li>
+<li>void valueUnbound(HttpSessionBindingEvent event)<ul>
+<li>当有一个object解绑session时收到通知</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -675,7 +723,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个标准的Web应用构成"><span class="nav-number">2.</span> <span class="nav-text">一个标准的Web应用构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JavaEE"><span class="nav-number">3.</span> <span class="nav-text">什么是JavaEE?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC"><span class="nav-number">3.0.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet"><span class="nav-number">3.0.2.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP"><span class="nav-number">3.0.3.</span> <span class="nav-text">JSP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet-1"><span class="nav-number">3.1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletConfig"><span class="nav-number">3.2.</span> <span class="nav-text">ServletConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext"><span class="nav-number">3.3.</span> <span class="nav-text">ServletContext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServlet"><span class="nav-number">3.4.</span> <span class="nav-text">HttpServlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest"><span class="nav-number">3.5.</span> <span class="nav-text">HttpServletRequest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletResponse"><span class="nav-number">3.6.</span> <span class="nav-text">HttpServletResponse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpSession"><span class="nav-number">3.7.</span> <span class="nav-text">HttpSession</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">3.8.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个简单例子"><span class="nav-number">3.8.0.1.</span> <span class="nav-text">一个简单例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebServlet中的Annotation"><span class="nav-number">3.8.1.</span> <span class="nav-text">WebServlet中的Annotation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebinitParam中的Annotation"><span class="nav-number">3.8.2.</span> <span class="nav-text">WebinitParam中的Annotation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebFilter中的Annotation"><span class="nav-number">3.8.3.</span> <span class="nav-text">WebFilter中的Annotation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Web-Events-和-Listener"><span class="nav-number">3.9.</span> <span class="nav-text">Java Web Events 和 Listener</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContextEvent"><span class="nav-number">3.9.1.</span> <span class="nav-text">ServletContextEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContextAttributeEvent"><span class="nav-number">3.9.2.</span> <span class="nav-text">ServletContextAttributeEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletRequestEvent"><span class="nav-number">3.9.3.</span> <span class="nav-text">ServletRequestEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletRequestAttributeEvent"><span class="nav-number">3.9.4.</span> <span class="nav-text">ServletRequestAttributeEvent</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一个标准的Web应用构成"><span class="nav-number">2.</span> <span class="nav-text">一个标准的Web应用构成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是JavaEE"><span class="nav-number">3.</span> <span class="nav-text">什么是JavaEE?</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JDBC"><span class="nav-number">3.0.1.</span> <span class="nav-text">JDBC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Servlet"><span class="nav-number">3.0.2.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JSP"><span class="nav-number">3.0.3.</span> <span class="nav-text">JSP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet-1"><span class="nav-number">3.1.</span> <span class="nav-text">Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletConfig"><span class="nav-number">3.2.</span> <span class="nav-text">ServletConfig</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServletContext"><span class="nav-number">3.3.</span> <span class="nav-text">ServletContext</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServlet"><span class="nav-number">3.4.</span> <span class="nav-text">HttpServlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletRequest"><span class="nav-number">3.5.</span> <span class="nav-text">HttpServletRequest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServletResponse"><span class="nav-number">3.6.</span> <span class="nav-text">HttpServletResponse</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpSession"><span class="nav-number">3.7.</span> <span class="nav-text">HttpSession</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookie"><span class="nav-number">3.8.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一个简单例子"><span class="nav-number">3.8.0.1.</span> <span class="nav-text">一个简单例子</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebServlet中的Annotation"><span class="nav-number">3.8.1.</span> <span class="nav-text">WebServlet中的Annotation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebinitParam中的Annotation"><span class="nav-number">3.8.2.</span> <span class="nav-text">WebinitParam中的Annotation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebFilter中的Annotation"><span class="nav-number">3.8.3.</span> <span class="nav-text">WebFilter中的Annotation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-Web-Events-和-Listener"><span class="nav-number">3.9.</span> <span class="nav-text">Java Web Events 和 Listener</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContextEvent"><span class="nav-number">3.9.1.</span> <span class="nav-text">ServletContextEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletContextAttributeEvent"><span class="nav-number">3.9.2.</span> <span class="nav-text">ServletContextAttributeEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletRequestEvent"><span class="nav-number">3.9.3.</span> <span class="nav-text">ServletRequestEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ServletRequestAttributeEvent"><span class="nav-number">3.9.4.</span> <span class="nav-text">ServletRequestAttributeEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpSessionEvent"><span class="nav-number">3.9.5.</span> <span class="nav-text">HttpSessionEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpSessionBindingEvent"><span class="nav-number">3.9.6.</span> <span class="nav-text">HttpSessionBindingEvent</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
