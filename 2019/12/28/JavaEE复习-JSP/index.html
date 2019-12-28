@@ -46,22 +46,18 @@
   };
 </script>
 
-  <meta name="description" content="通过词法分析, 可以将一个字符串转换成记号流, 但是记号流如何转换成语法树, 需要进行语法分析. 实质: 无结构的数据转化成有结构的数据 依据: 上下文无关语法 上下文无关文法 前言 正规式来定义一些简单的语言，能表示给定结构的固定次数的重复或者没有指定次数的重复, 但 正规式不能用于描述配对或嵌套的结构   定义 上下文无关文法是四元组( $V_T,V_N,S,P$ ) $V_T$: 终结符集合">
+  <meta name="description" content="JSP语法 JSP中可以包含一些Java代码, 方法如下 1&amp;lt;% 代码 %&amp;gt; 同样的, 也可以插入一些表达式, 它会被转化为String 来插入到表达式出现的地方, 方法如下 1&amp;lt;%= 表达式 %&amp;gt; JSP存在一些指令, 来设置页面的一些属性, 格式如下 1&amp;lt;%@ 指令 属性=&quot;值&quot; %&amp;gt;">
 <meta name="keywords" content="IT,Embedded Software">
 <meta property="og:type" content="article">
-<meta property="og:title" content="编译原理-文法分析-上下文无关文法,文法和语言">
-<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;11&#x2F;25&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80&#x2F;index.html">
+<meta property="og:title" content="JavaEE复习-JSP">
+<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2019&#x2F;12&#x2F;28&#x2F;JavaEE%E5%A4%8D%E4%B9%A0-JSP&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
-<meta property="og:description" content="通过词法分析, 可以将一个字符串转换成记号流, 但是记号流如何转换成语法树, 需要进行语法分析. 实质: 无结构的数据转化成有结构的数据 依据: 上下文无关语法 上下文无关文法 前言 正规式来定义一些简单的语言，能表示给定结构的固定次数的重复或者没有指定次数的重复, 但 正规式不能用于描述配对或嵌套的结构   定义 上下文无关文法是四元组( $V_T,V_N,S,P$ ) $V_T$: 终结符集合">
+<meta property="og:description" content="JSP语法 JSP中可以包含一些Java代码, 方法如下 1&amp;lt;% 代码 %&amp;gt; 同样的, 也可以插入一些表达式, 它会被转化为String 来插入到表达式出现的地方, 方法如下 1&amp;lt;%= 表达式 %&amp;gt; JSP存在一些指令, 来设置页面的一些属性, 格式如下 1&amp;lt;%@ 指令 属性=&quot;值&quot; %&amp;gt;">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;treeexam.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;binexam.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nfa2lex.jpg">
-<meta property="og:updated_time" content="2019-12-10T01:47:01.895Z">
+<meta property="og:updated_time" content="2019-12-28T08:20:00.151Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;treeexam.jpg">
 
-<link rel="canonical" href="http://qidianxuan.github.io/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/">
+<link rel="canonical" href="http://qidianxuan.github.io/2019/12/28/JavaEE%E5%A4%8D%E4%B9%A0-JSP/">
 
 
 <script id="page-configurations">
@@ -75,7 +71,7 @@
   };
 </script>
 
-  <title>编译原理-文法分析-上下文无关文法,文法和语言 | qidianxuan's blog</title>
+  <title>JavaEE复习-JSP | qidianxuan's blog</title>
   
 
 
@@ -184,7 +180,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/">
+    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2019/12/28/JavaEE%E5%A4%8D%E4%B9%A0-JSP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -197,7 +193,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          编译原理-文法分析-上下文无关文法,文法和语言
+          JavaEE复习-JSP
         </h1>
 
         <div class="post-meta">
@@ -206,24 +202,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-25 16:00:24" itemprop="dateCreated datePublished" datetime="2019-11-25T16:00:24+08:00">2019-11-25</time>
+              <time title="创建时间：2019-12-28 14:43:35 / 修改时间：16:20:00" itemprop="dateCreated datePublished" datetime="2019-12-28T14:43:35+08:00">2019-12-28</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 09:47:01" itemprop="dateModified" datetime="2019-12-10T09:47:01+08:00">2019-12-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
-                    <span itemprop="name">编译原理</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
             </span>
@@ -243,8 +233,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/25/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E6%96%87%E6%B3%95%E5%88%86%E6%9E%90-%E4%B8%8A%E4%B8%8B%E6%96%87%E6%97%A0%E5%85%B3%E6%96%87%E6%B3%95-%E6%96%87%E6%B3%95%E5%92%8C%E8%AF%AD%E8%A8%80/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/12/28/JavaEE%E5%A4%8D%E4%B9%A0-JSP/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/12/28/JavaEE%E5%A4%8D%E4%B9%A0-JSP/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -259,85 +249,239 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>通过<a href="https://qidianxuan.cn/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">词法分析</a>, 可以将一个字符串转换成记号流, 但是记号流如何转换成语法树, 需要进行语法分析.</p><ul>
-<li>实质: 无结构的数据转化成有结构的数据</li>
-<li>依据: 上下文无关语法</li>
-</ul><h2 id="上下文无关文法"><a href="#上下文无关文法" class="headerlink" title="上下文无关文法"></a>上下文无关文法</h2><ul>
-<li>前言<ul>
-<li>正规式来定义一些简单的语言，能表示给定结构的固定次数的重复或者没有指定次数的重复, 但</li>
-<li>正规式不能用于描述配对或嵌套的结构</li>
-</ul>
-</li>
-<li>定义<ul>
-<li>上下文无关文法是四元组( $V_T,V_N,S,P$ )<ul>
-<li>$V_T$: 终结符集合(非空有限集合)</li>
-<li>$V_N$: 非终结符集合( $V_T \bigcap V_N = \emptyset$ )</li>
-<li>S: 开始符号</li>
-<li>P: 产生式集合 ( 产生式形式如$ A \rightarrow \alpha 其中 A \in V_N, \alpha \in (V_T \bigcup V_N)^*$ )</li>
-</ul>
-</li>
-<li>例子<br>$ ( \{id,+, \ast ,-,(,) \} , \{expr,op\} , expr , P ) $<br>其中P包括:<br>expr $ \rightarrow $ expr op expr<br>expr $ \rightarrow $ (expr)<br>expr $ \rightarrow $ -expr<br>expr $ \rightarrow $ id<br>op $ \rightarrow $ +<br>op $ \rightarrow $ *  </li>
-</ul>
-</li>
-<li>优点<ul>
-<li>文法给出了精确的，易于理解的语法说明</li>
-<li>自动产生高效的分析器</li>
-<li>可以给语言定义出层次结构</li>
-<li>以文法为基础的语言的实现便于语言的修改</li>
-</ul>
-</li>
-<li><p>缺点</p>
+        <h2 id="JSP语法"><a href="#JSP语法" class="headerlink" title="JSP语法"></a>JSP语法</h2><ul>
+<li>JSP中可以包含一些Java代码, 方法如下</li>
+</ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> 代码 %&gt;</span></span><br></pre></td></tr></table></figure><ul>
+<li>同样的, 也可以插入一些表达式, 它会被转化为String 来插入到表达式出现的地方, 方法如下</li>
+</ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%=</span> 表达式 %&gt;</span></span><br></pre></td></tr></table></figure><ul>
+<li>JSP存在一些<strong>指令</strong>, 来设置页面的一些属性, 格式如下</li>
+</ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> 指令 属性=<span class="string">"值"</span> %&gt;</span></span><br></pre></td></tr></table></figure><a id="more"></a>
+
+
+
+
+
+<p>对于属性, 有如下类型</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">指令</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">page</td>
+<td style="text-align:center">定义页面的依赖属性，比如脚本语言、error页面、缓存需求等等</td>
+</tr>
+<tr>
+<td style="text-align:center">include</td>
+<td style="text-align:center">包含其他文件</td>
+</tr>
+<tr>
+<td style="text-align:center">taglib</td>
+<td style="text-align:center">引入标签库的定义，可以是自定义标签</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li>文法只能描述编程语言的大部分语法</li>
+<li>JSP定义了一套<strong>行为</strong>, 来控制servlet引擎, 格式如下:</li>
 </ul>
-</li>
-<li><p>文法推导</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jsp:行为</span> 属性=<span class="string">"值"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>存在如下行为:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">行为</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">include</td>
+<td style="text-align:left">用于在当前页面中包含静态或动态资源</td>
+</tr>
+<tr>
+<td style="text-align:left">useBean</td>
+<td style="text-align:left">寻找和初始化一个JavaBean组件</td>
+</tr>
+<tr>
+<td style="text-align:left">setProperty</td>
+<td style="text-align:left">设置 JavaBean组件的值</td>
+</tr>
+<tr>
+<td style="text-align:left">getProperty</td>
+<td style="text-align:left">将 JavaBean组件的值插入到 output中</td>
+</tr>
+<tr>
+<td style="text-align:left">forward</td>
+<td style="text-align:left">从一个JSP文件向另一个文件传递一个包含用户请求的request对象</td>
+</tr>
+<tr>
+<td style="text-align:left">plugin</td>
+<td style="text-align:left">用于在生成的HTML页面中包含Applet和JavaBean对象</td>
+</tr>
+<tr>
+<td style="text-align:left">element</td>
+<td style="text-align:left">动态创建一个XML元素</td>
+</tr>
+<tr>
+<td style="text-align:left">attribute</td>
+<td style="text-align:left">定义动态创建的XML元素的属性</td>
+</tr>
+<tr>
+<td style="text-align:left">body</td>
+<td style="text-align:left">定义动态创建的XML元素的主体</td>
+</tr>
+<tr>
+<td style="text-align:left">text</td>
+<td style="text-align:left">用于封装模板数据</td>
+</tr>
+</tbody>
+</table>
+</div>
 <ul>
-<li>推导: 把产生式看成重写规则，把符号串中的非终结符用其产生式右部的串来代替<br>以文法 $ E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br>存在代换序列: $ E \Rightarrow E+E \Rightarrow id+E \Rightarrow id+id $<br>这个代换序列即<strong>从E到id+id的推导</strong>,  </li>
-<li>一般而言, 由上下无关文法产生的语言叫<strong>上下文无关语言</strong>  </li>
-<li>若两个文法产生相同的语言, 则称这两个文法<strong>等价</strong>  </li>
-<li>若存在S$\Rightarrow ^\ast \alpha$, 若α含非终结符, 则称其为文法的<strong>句型</strong>, 只含有终结符的句型, 称之为<strong>句子</strong>  </li>
-<li>在推导过程中, 每一步都代换句型中最左边的非终结符的推导,称之为<strong>最左推导</strong>(写作$\alpha \Rightarrow _{lm}\beta$), 类似的,存在<strong>最右推导</strong>(写作$\alpha \Rightarrow _{rm}\beta$), 最右推导亦称为<strong>规范推导</strong></li>
-</ul>
-</li>
-<li>分析树<ul>
-<li>分析树即推导的图形表示.</li>
-<li>例子:<br>以文法 $ E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/treeexam.jpg" alt="exm.png"><br>对于同样的句子, 其 <em>最终</em> 分析树是一样的, 但过程会有不同.</li>
-</ul>
-</li>
-<li>二义性<ul>
-<li>文法的二义性，是指对于符合文法规则的同一个句子，存在两种可能的分析树</li>
-<li>考虑如下的情况:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/binexam.jpg" alt><br>对于同一个句子, 该句子存在二义性, 分析树存在了不同, 也带来了不同的释义, 左边的为 id*(id+id), 而右边为 (id*id)+id, 但对于句子id*id+id, 一般认为(id*id)+id是正确的</li>
-<li>如何消除二义性, 一般而言, 需要加入<strong>消除二义性的规则</strong></li>
-<li>以文法 $ E \rightarrow E+E|E \ast E|id$为例:<br>可以更改为如下规则:<br>$ E \rightarrow E + T | T $<br>$ E \rightarrow E \ast F | F $<br>$ F \rightarrow id | (E) $</li>
-</ul>
-</li>
-<li>正规式可以描述的语言都可以用上下文无关文法来描述</li>
-<li>NFA转化为上下文无关文法:<ol>
-<li>确定终结符集合</li>
-<li>为每个状态引入一个非终结符$A_i$</li>
-<li>如果状态i有一个转换a到状态j, 则引入产生式$A_i \rightarrow aA_i $, 如果i是接收状态, 则引入$A_i \rightarrow \epsilon$<br>例子:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfa2lex.jpg" alt></li>
+<li>JSP页面在创建时, 存在一些已经创建好的变量:<ol>
+<li>HttpServletRequest <strong>request</strong></li>
+<li>HttpServletResponse <strong>response</strong></li>
+<li>HttpSession <strong>session</strong></li>
+<li>ServletConfig <strong>config</strong></li>
+<li>ServletContext <strong>application</strong></li>
+<li>JspWriter <strong>out</strong></li>
+<li>PageContext <strong><em>pageContext</em></strong></li>
+<li>page <strong>this</strong></li>
+<li>Exception <strong>exception</strong></li>
 </ol>
 </li>
-<li>为什么要用正规式定义词法 <ul>
-<li>词法规则非常简单,不必用上下文无关文法</li>
-<li>对于词法记号,正规式描述简洁且易于理解</li>
-<li>从正规式构造出的词法分析器效率高</li>
+</ul>
+<h2 id="PageContext"><a href="#PageContext" class="headerlink" title="PageContext"></a>PageContext</h2><ul>
+<li>继承自JspContext, 是一个抽象类</li>
+<li>PageContext实例提供对与JSP页面关联的所有名称空间的访问，提供对若干页面属性的访问.<ul>
+<li>Object getAttribute(String name);<ul>
+<li>取得page内的一个name属性的值</li>
 </ul>
 </li>
-<li>把词法分析从语法分析中分离出来的理由 <ul>
-<li>简化设计</li>
-<li>编译器的效率会改进</li>
-<li>编译器的可移植性加强</li>
-<li>便于编译器前端的模块划分</li>
+<li>Object getAttribute(String name, int scope);<ul>
+<li>取得scope内的一个name属性的值</li>
 </ul>
 </li>
-<li>能否把词法分析并入到语法分析中,直接从字符流进行语法分析?<ul>
-<li>若把词法分析和语法分析合在一起，则必须将语言的注解和空白的规则反映在文法中，文法将大大复杂</li>
-<li>注解和空白由自己来处理的分析器，比注解和空格已由词法分析器删除的分析器要复杂得多</li>
+<li>void setAttribute(String name, Object value); <ul>
+<li>设置page内的一个name属性的值</li>
+</ul>
+</li>
+<li>void setAttribute(String name, Object value, int scope); <ul>
+<li>设置scope内的一个name属性的值</li>
+</ul>
+</li>
+<li>scope存在如下取值<ul>
+<li>PAGE_SCOPE = 1;</li>
+<li>REQUEST_SCOPE = 2;</li>
+<li>SESSION_SCOPE = 3;</li>
+<li>APPLICATION_SCOPE = 4;</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+<h2 id="EL表达式"><a href="#EL表达式" class="headerlink" title="EL表达式"></a>EL表达式</h2><ul>
+<li>在JSP中访问模型对象是通过EL表达式的语法来表达。</li>
+<li>所有EL表达式的格式都是以“${}”表示。</li>
+<li>${ userinfo}代表获取变量userinfo的值, 若为规定范围, 则查找顺序为:<ul>
+<li>page→request→session→application</li>
+</ul>
+</li>
+<li><p>存在两种运算符</p>
+<ul>
+<li>. </li>
+<li>[] ,动态或含有特殊字符</li>
+</ul>
+</li>
+<li><p>举例:</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%=</span> <span class="attr">request.getAttribute</span>("<span class="attr">name</span>") %&gt;</span></span><br><span class="line"><span class="comment">&lt;!--等价于--&gt;</span></span><br><span class="line">$&#123;requestScope.name&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="TAG-和-SimpleTag"><a href="#TAG-和-SimpleTag" class="headerlink" title="TAG 和 SimpleTag"></a>TAG 和 SimpleTag</h2><p>对于html, 支持自定义标签, 该接口定义了Tag处理程序和JSP页面实现类之间的基本协议</p>
+<ul>
+<li>TAG的方法</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">int doEndTag()</td>
+<td style="text-align:left">标签域结束时</td>
+</tr>
+<tr>
+<td style="text-align:left">int doStartTag()</td>
+<td style="text-align:left">标签域开始时调用, 一般使用此</td>
+</tr>
+<tr>
+<td style="text-align:left">Tag getParent()</td>
+<td style="text-align:left">获取父标签</td>
+</tr>
+<tr>
+<td style="text-align:left">void release()</td>
+<td style="text-align:left">释放标签</td>
+</tr>
+<tr>
+<td style="text-align:left">void setPageContext(PageContext pc)</td>
+<td style="text-align:left">设置当前的PageContext</td>
+</tr>
+<tr>
+<td style="text-align:left">void setParent(Tag t)</td>
+<td style="text-align:left">设置父标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Simple Tag的方法</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">void doTag()</td>
+<td style="text-align:left">调用标签时</td>
+</tr>
+<tr>
+<td style="text-align:left">JspTag getParent()</td>
+<td style="text-align:left">获取父标签</td>
+</tr>
+<tr>
+<td style="text-align:left">void setJspBody(JspFragment jspBody)</td>
+<td style="text-align:left">设置Jsp body</td>
+</tr>
+<tr>
+<td style="text-align:left">void setJspContext(JspContext pc)</td>
+<td style="text-align:left">设置当前的JspContext</td>
+</tr>
+<tr>
+<td style="text-align:left">void setParent(Tag t)</td>
+<td style="text-align:left">设置父标签</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>如何使用<br>  可参考:<a href="https://blog.csdn.net/yy339452689/article/details/78520692" target="_blank" rel="noopener">https://blog.csdn.net/yy339452689/article/details/78520692</a></li>
+</ul>
+
     </div>
 
     
@@ -350,17 +494,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/24/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" rel="next" title="编译原理-词法分析">
-                  <i class="fa fa-chevron-left"></i> 编译原理-词法分析
+                <a href="/2019/12/20/JavaEE%E5%A4%8D%E4%B9%A0-API/" rel="next" title="JavaEE复习-API简要整理">
+                  <i class="fa fa-chevron-left"></i> JavaEE复习-API简要整理
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/27/Tips-of-an-Interview/" rel="prev" title="Tips of an Interview">
-                  Tips of an Interview <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -400,7 +541,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#上下文无关文法"><span class="nav-number">1.</span> <span class="nav-text">上下文无关文法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP语法"><span class="nav-number">1.</span> <span class="nav-text">JSP语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PageContext"><span class="nav-number">2.</span> <span class="nav-text">PageContext</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL表达式"><span class="nav-number">3.</span> <span class="nav-text">EL表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TAG-和-SimpleTag"><span class="nav-number">4.</span> <span class="nav-text">TAG 和 SimpleTag</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -594,54 +735,6 @@ window.addEventListener('pjax:success', () => {
   
 
   
-      
-<script type="text/x-mathjax-config">
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') {
-          next = next.nextSibling;
-        }
-        if (next && next.nodeName.toLowerCase() === 'br') {
-          next.parentNode.removeChild(next);
-        }
-      }
-    });
-  });
-
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
-      if (element.nodeName.toLowerCase() == 'li') {
-        element = element.parentNode;
-      }
-      element.classList.add('has-jax');
-    }
-  });
-</script>
-<script>
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
-    MathJax.Hub.Typeset();
-  }, window.MathJax);
-</script>
-
-    
 
   
 
