@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qidianxuan.github.io/"/>
-  <updated>2020-01-02T02:59:05.663Z</updated>
+  <updated>2019-12-31T08:29:38.064Z</updated>
   <id>http://qidianxuan.github.io/</id>
   
   <author>
@@ -15,46 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>软件工程复习</title>
-    <link href="http://qidianxuan.github.io/2019/12/31/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%A4%8D%E4%B9%A0/"/>
-    <id>http://qidianxuan.github.io/2019/12/31/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%A4%8D%E4%B9%A0/</id>
-    <published>2019-12-31T08:26:46.000Z</published>
-    <updated>2020-01-02T02:59:05.663Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="软件工程概述"><a href="#软件工程概述" class="headerlink" title="软件工程概述"></a>软件工程概述</h2><h3 id="软件危机的产生-表现以及应对"><a href="#软件危机的产生-表现以及应对" class="headerlink" title="软件危机的产生, 表现以及应对"></a>软件危机的产生, 表现以及应对</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ul><li>软件危机时指在计算机软件的开发和维护过程中受到的一系列严重问题.</li></ul><h4 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h4><ul><li>技术原因<ul><li>软件规模越来越大</li><li>软件复杂度越来越高</li></ul></li><li>管理原因<ul><li>软件开发需要正确的理论指导, 过分依靠个人技巧与创作性</li><li>对用户需求没有完整准确的认识</li></ul></li></ul><h4 id="表现"><a href="#表现" class="headerlink" title="表现"></a>表现</h4><ul><li>软件开发成本日益增长</li><li>开发进度难以控制</li><li>软件质量差</li><li>开发过程无法有效介入和管理</li><li>代码难以维护 等</li></ul><a id="more"></a><h4 id="应对方案"><a href="#应对方案" class="headerlink" title="应对方案"></a>应对方案</h4><ul><li><strong>软件工程</strong></li></ul><h4 id="具体途径"><a href="#具体途径" class="headerlink" title="具体途径"></a>具体途径</h4><ul><li>对计算机软件正确认识</li><li>推广使用开发软件成功的<strong>技术和方法</strong>, 研究探索更好更有效的技术和方法, 消除错误的概念与做法 </li><li>开发和使用更好的<strong>软件工具</strong></li><li>对于时间, 人员, 资源等需要引入更加合理的<strong>管理措施</strong>  </li></ul><p>软件工程正是从<strong>技术和管理</strong>两方面研究如何更好的开发和维护计算机软件的一门新兴学科</p><h3 id="软件工程知识体系"><a href="#软件工程知识体系" class="headerlink" title="软件工程知识体系"></a>软件工程知识体系</h3><ul><li>开发过程<ul><li>软件需求, 设计, 构造, 测试, 维护</li></ul></li><li>支持过程<ul><li>配置管理, 工程管理, 软件工程, 工具与方法, 软件度量</li></ul></li><li>主要目标: <strong>高效开发高质量软件, 降低开发成本</strong></li></ul><h3 id="统一建模语言"><a href="#统一建模语言" class="headerlink" title="统一建模语言"></a>统一建模语言</h3><ul><li>统一建模语言(UML)提供了一整套对系统建模的基础设施, 包括模型的表示及建模的方法等, 可以适用不同的系统层次. 它与其说是一种语言, 不如说是一种<strong>方法</strong></li><li>UML将软件开发过程中语言<strong>表示与过程</strong>进行了分离</li><li><p>包括的<strong>模型</strong>(UML2.0)</p><ul><li>用例图: 用于系统与使用者之间的交互</li><li>类图: 类, 接口及其之间关系</li><li>活动图: 系统中顺序和并行的活动</li><li>对象图: 类图对应对象的实例</li><li>还有: 顺序图, 通信图, 时序图, 交互概况图, 组成结构图, 组件图, 包图, 状态图, 部署图</li></ul></li><li><p>功能</p><ul><li>可视化 Visualization</li><li>规格说明 Specification</li><li>构造 Constructing</li><li>文档化 Documenting</li></ul></li><li>Kruchten的4+1视图<ul><li>逻辑视图</li><li>进程视图</li><li>开发视图</li><li>物理视图</li><li>用例视图</li></ul></li><li>系统开发的解空间: <strong>基于用例的高度迭代的软件开发过程</strong><ol><li>用例建模: 描述系统功能性需求, 每个用例需要有一个用例规约</li><li>分析与设计: 要迭代式的进行系统的静态建模和动态建模</li><li>架构建模: 设计系统的软件体系结构</li><li>实现: 软件架构模型映射到可部署实现的模型解空间中</li></ol></li></ul><h3 id="软件工程的开发方法"><a href="#软件工程的开发方法" class="headerlink" title="软件工程的开发方法"></a>软件工程的开发方法</h3><ul><li>方法: “如何做”<ul><li>传统方法<ul><li>生命周期模型</li><li>划分为若干阶段</li><li>每个阶段有各自任务</li><li>阶段之间存在顺序</li></ul></li><li>面向对象方法<ul><li>对象作为融合数据及在数据之上的操作行为的统一的软件构件</li><li>把所有对象都划分为<strong>类</strong>, 每个类存在一组数据与操作</li><li>若干个类组成<strong>层次结构(亦称类等级)</strong>, 下类<strong>继承</strong>自上类</li><li>对象间仅能通过发送消息相互联系, 即<strong>封装性</strong></li></ul></li></ul></li><li>工具: “用什么做”</li><li>过程: “如何控制, 协调, 保证质量”    </li></ul><h4 id="面向对象方法的特点"><a href="#面向对象方法的特点" class="headerlink" title="面向对象方法的特点"></a>面向对象方法的特点</h4><ul><li>尽可能<strong>模拟人类习惯的思维方式</strong></li><li>是一个<strong>主动</strong>地多次<strong>反复迭代</strong>的演化过程</li><li>概念与方法存在<strong>一致性</strong>, 阶段见平滑(无缝)过渡</li><li>特殊到一般的<strong>归纳</strong>思维, 一般到特殊的<strong>演绎</strong>思维(<strong>继承的思想</strong>)</li><li>降低了<strong>复杂性</strong>, 提高了<strong>可理解性</strong></li><li>对象, 以及面向对象的方法, 促进了软件的<strong>可重用性</strong></li></ul><h2 id="软件开发过程"><a href="#软件开发过程" class="headerlink" title="软件开发过程"></a>软件开发过程</h2><ul><li>软件开发过程(software development process), 亦称软件开发生命周期(SDLC, software development life cycle), 是软件开发的任务框架以及规范, 可以简称为软件生命周期与软件过程</li></ul><h3 id="软件生命周期与软件工程"><a href="#软件生命周期与软件工程" class="headerlink" title="软件生命周期与软件工程"></a>软件生命周期与软件工程</h3><ul><li>生命周期模型较<strong>一般化</strong>, 软件开发过程较<strong>具体化</strong></li><li><strong>过程改进</strong>: 可重复的, 可预测的过程, 提高软件效率及质量</li><li>生命周期是软件开发的宏观上的框架, 软件过程则涉及到软件开发的流程等管理细节, 在框架稳定的前提下允许对软件过程进行裁剪, 有以下4种:<ul><li>顺序式</li><li>迭代式</li><li>增量式</li><li>敏捷式</li></ul></li><li><strong>过程管理</strong>一般采用分治的思想, 软件生命周期可划分为:<ul><li>软件定义</li><li>软件开发</li><li>运行维护</li></ul></li></ul><h3 id="各阶段活动及任务"><a href="#各阶段活动及任务" class="headerlink" title="各阶段活动及任务"></a>各阶段活动及任务</h3><h4 id="1-可行性分析与开发计划"><a href="#1-可行性分析与开发计划" class="headerlink" title="1.可行性分析与开发计划"></a>1.可行性分析与开发计划</h4><p>* </p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;软件工程概述&quot;&gt;&lt;a href=&quot;#软件工程概述&quot; class=&quot;headerlink&quot; title=&quot;软件工程概述&quot;&gt;&lt;/a&gt;软件工程概述&lt;/h2&gt;&lt;h3 id=&quot;软件危机的产生-表现以及应对&quot;&gt;&lt;a href=&quot;#软件危机的产生-表现以及应对&quot; class=&quot;headerlink&quot; title=&quot;软件危机的产生, 表现以及应对&quot;&gt;&lt;/a&gt;软件危机的产生, 表现以及应对&lt;/h3&gt;&lt;h4 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定义&quot; class=&quot;headerlink&quot; title=&quot;定义&quot;&gt;&lt;/a&gt;定义&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;软件危机时指在计算机软件的开发和维护过程中受到的一系列严重问题.&lt;/li&gt;
-&lt;/ul&gt;&lt;h4 id=&quot;产生原因&quot;&gt;&lt;a href=&quot;#产生原因&quot; class=&quot;headerlink&quot; title=&quot;产生原因&quot;&gt;&lt;/a&gt;产生原因&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;技术原因&lt;ul&gt;
-&lt;li&gt;软件规模越来越大&lt;/li&gt;
-&lt;li&gt;软件复杂度越来越高&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;管理原因&lt;ul&gt;
-&lt;li&gt;软件开发需要正确的理论指导, 过分依靠个人技巧与创作性&lt;/li&gt;
-&lt;li&gt;对用户需求没有完整准确的认识&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;&lt;h4 id=&quot;表现&quot;&gt;&lt;a href=&quot;#表现&quot; class=&quot;headerlink&quot; title=&quot;表现&quot;&gt;&lt;/a&gt;表现&lt;/h4&gt;&lt;ul&gt;
-&lt;li&gt;软件开发成本日益增长&lt;/li&gt;
-&lt;li&gt;开发进度难以控制&lt;/li&gt;
-&lt;li&gt;软件质量差&lt;/li&gt;
-&lt;li&gt;开发过程无法有效介入和管理&lt;/li&gt;
-&lt;li&gt;代码难以维护 等&lt;/li&gt;
-&lt;/ul&gt;
-    
-    </summary>
-    
-    
-      <category term="软件工程" scheme="http://qidianxuan.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>JavaEE复习-架构</title>
