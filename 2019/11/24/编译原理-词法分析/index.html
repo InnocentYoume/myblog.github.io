@@ -75,7 +75,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_ex_p.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;death.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;nf_fin.jpg">
-<meta property="og:updated_time" content="2019-12-17T13:56:21.826Z">
+<meta property="og:updated_time" content="2020-01-03T01:48:43.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;dtoa2.jpg">
 
@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-17 21:56:21" itemprop="dateModified" datetime="2019-12-17T21:56:21+08:00">2019-12-17</time>
+                <time title="修改时间：2020-01-03 09:48:43" itemprop="dateModified" datetime="2020-01-03T09:48:43+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -423,23 +423,29 @@
 </div>
 <h2 id="有限自动机"><a href="#有限自动机" class="headerlink" title="有限自动机"></a>有限自动机</h2><ul>
 <li>识别器: 是一个程序，取串x作为输入，当x是语言的句子时，它回答“是”，否则回答“不是”</li>
-<li>状态转换图即有限自动机, 可以作为识别器<h3 id="确定的有限自动机-DFA"><a href="#确定的有限自动机-DFA" class="headerlink" title="确定的有限自动机(DFA)"></a>确定的有限自动机(DFA)</h3></li>
+<li>状态转换图即有限自动机, 可以作为识别器</li>
+</ul>
+<h3 id="确定的有限自动机-DFA"><a href="#确定的有限自动机-DFA" class="headerlink" title="确定的有限自动机(DFA)"></a>确定的有限自动机(DFA)</h3><ul>
 <li>DFA是一个数学模型, 包括<ul>
 <li>状态集合S</li>
 <li>输入字母表$\sum$</li>
 <li>转换函数$\sf move: S \times \sum \rightarrow S$</li>
 <li>唯一的初态$\sf s \in S$</li>
-<li>终态集合$\sf F \subseteq S$<h3 id="不确定的有限自动机-NFA"><a href="#不确定的有限自动机-NFA" class="headerlink" title="不确定的有限自动机(NFA)"></a>不确定的有限自动机(NFA)</h3></li>
+<li>终态集合$\sf F \subseteq S$</li>
 </ul>
 </li>
+</ul>
+<h3 id="不确定的有限自动机-NFA"><a href="#不确定的有限自动机-NFA" class="headerlink" title="不确定的有限自动机(NFA)"></a>不确定的有限自动机(NFA)</h3><ul>
 <li>NFA是一个数学模型, 包括<ul>
 <li>状态集合S</li>
 <li>输入字母表$\sf \sum$</li>
 <li>转换函数$\sf move: S \times ( \sum \bigcup \{ \epsilon \})  \rightarrow S$(此处$\epsilon$理解为”未知”)</li>
 <li>唯一的初态$\sf s \in S$</li>
-<li>终态集合$\sf F \subseteq S$<h3 id="DFA与NFA的对比"><a href="#DFA与NFA的对比" class="headerlink" title="DFA与NFA的对比"></a>DFA与NFA的对比</h3></li>
+<li>终态集合$\sf F \subseteq S$</li>
 </ul>
 </li>
+</ul>
+<h3 id="DFA与NFA的对比"><a href="#DFA与NFA的对比" class="headerlink" title="DFA与NFA的对比"></a>DFA与NFA的对比</h3><ul>
 <li>举例:</li>
 </ul>
 <div class="table-container">
@@ -479,9 +485,9 @@
 </ul>
 </li>
 <li>NFA更贴近于人们对正规式的认识</li>
-<li>DFA因为每次状态转换都是确定性的<h3 id="DFA的构建"><a href="#DFA的构建" class="headerlink" title="DFA的构建"></a>DFA的构建</h3></li>
+<li>DFA因为每次状态转换都是确定性的</li>
 </ol>
-<ul>
+<h3 id="DFA的构建"><a href="#DFA的构建" class="headerlink" title="DFA的构建"></a>DFA的构建</h3><ul>
 <li>由自然语言描述构建<br>方法:  <ol>
 <li>列出所有可能的状态</li>
 <li>从各个状态出发, 构造边及输入字符记号</li>

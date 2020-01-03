@@ -503,10 +503,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-12-10 10:17:10 / 修改时间：11:03:48" itemprop="dateCreated datePublished" datetime="2019-12-10T10:17:10+08:00">2019-12-10</time>
+              <time title="创建时间：2019-12-10 10:17:10" itemprop="dateCreated datePublished" datetime="2019-12-10T10:17:10+08:00">2019-12-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-03 09:46:29" itemprop="dateModified" datetime="2020-01-03T09:46:29+08:00">2020-01-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -546,30 +552,24 @@
       
           <h2 id="语法制导"><a href="#语法制导" class="headerlink" title="语法制导"></a>语法制导</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
 <li>对应每一个产生式编制一个语义子程序, 当一个产生式获得匹配时, 调用相应的语义子程序实现语义检查与翻译</li>
-<li>带属性和规则的上下文无关文法, 称之为<strong>基础文法</strong><h3 id="翻译方案"><a href="#翻译方案" class="headerlink" title="翻译方案"></a>翻译方案</h3>在产生式的右部的适当位置, 插入相应的语义动作, 按照分析的进程, 执行遇到的语义动作<h2 id="属性文法-上下文无关文法与程序语义的桥梁"><a href="#属性文法-上下文无关文法与程序语义的桥梁" class="headerlink" title="属性文法-上下文无关文法与程序语义的桥梁"></a>属性文法-上下文无关文法与程序语义的桥梁</h2></li>
+<li>带属性和规则的上下文无关文法, 称之为<strong>基础文法</strong></li>
+</ul><h3 id="翻译方案"><a href="#翻译方案" class="headerlink" title="翻译方案"></a>翻译方案</h3><p>在产生式的右部的适当位置, 插入相应的语义动作, 按照分析的进程, 执行遇到的语义动作</p><h2 id="属性文法-上下文无关文法与程序语义的桥梁"><a href="#属性文法-上下文无关文法与程序语义的桥梁" class="headerlink" title="属性文法-上下文无关文法与程序语义的桥梁"></a>属性文法-上下文无关文法与程序语义的桥梁</h2><ul>
 <li>亦称为翻译文法</li>
 <li>在上下文无关文法的基础上, 为每个文法符号配备若干相关的”值”(属性)<ul>
 <li>属性代表与文法相关的信息</li>
 <li>属性可以进行运算与传递</li>
-<li>语义规则: 对于文法的每个产生式都配备了一组属性的计算规则<h2 id="基础文法"><a href="#基础文法" class="headerlink" title="基础文法"></a>基础文法</h2></li>
-</ul>
-</li>
-<li>每个文法符号有一组属性</li>
-<li>每个文法产生式A ⟶ α, 有一组形式为b:=f(c1,c2,…,ck)的语义规则, 其中f为函数, b和c1,c2,…,ck是该产生式文法符号的属性<ul>
-<li>综合属性:如果b是A的属性, c1,c2,…,ck是产生式右部文法符号的属性或A的其他属性<br>属性值由分析树中其子节点的属性值来计算</li>
-<li>继承属性:如果b是产生式右部某个文法符号X的属性, c1,c2,…,ck是产生式右部文法符号的属性或A的其他属性<br>属性值由结点的兄弟结点及父结点的属性值来计算</li>
-<li>对<strong>语义规则</strong>b:=f(c1,c2,…,ck), 函数f通常为表达式(形如T.val=F.val), 或者一些产生副作用的操作(形如print(E.val)打印), 可以看作产生式左部非终结符的<em>虚拟综合属性</em></li>
-</ul>
-</li>
-<li>一般而言:<ul>
-<li>终结符只有综合属性, 并且这些综合属性通常由词法分析器提供</li>
-<li>非终结符既可以有综合属性也可以有继承属性, 文法的开始符号一般没有继承属性, 除非特殊说明</li>
-<li>文法符号的综合属性集和继承属性集的交集应当为空</li>
-<li>对出现在<em>产生式右边的继承属性</em>以及出现在<em>产生式左边的综合属性</em>都必须提供一个计算规则, 属性计算规则中只能使用相应产生式中的文法符号的属性</li>
-<li>对出现在<em>产生式左边的继承属性</em>以及出现在<em>产生式右边的综合属性</em>不由所给的产生式的属性计算规则进行计算, 他们由其他产生式的属性规则计算或由属性计算器的参数提供<h3 id="注释分析树-分析树-属性"><a href="#注释分析树-分析树-属性" class="headerlink" title="注释分析树: 分析树+属性"></a>注释分析树: 分析树+属性</h3></li>
+<li>语义规则: 对于文法的每个产生式都配备了一组属性的计算规则</li>
 </ul>
 </li>
 </ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/12/10/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90-%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E7%BF%BB%E8%AF%91/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -619,7 +619,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 10:17:06" itemprop="dateModified" datetime="2019-12-10T10:17:06+08:00">2019-12-10</time>
+                <time title="修改时间：2020-01-03 09:50:26" itemprop="dateModified" datetime="2020-01-03T09:50:26+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -662,7 +662,8 @@
 <li>句柄是句型的一个字串</li>
 <li>把句柄<strong>规约</strong>为非终结符代表了某一步最右推导的逆过程</li>
 <li>句柄的右边只有终结符</li>
-<li>若文法二义, 则句柄不唯一<h2 id="移进-规约分析"><a href="#移进-规约分析" class="headerlink" title="移进-规约分析"></a>移进-规约分析</h2></li>
+<li>若文法二义, 则句柄不唯一</li>
+</ul><h2 id="移进-规约分析"><a href="#移进-规约分析" class="headerlink" title="移进-规约分析"></a>移进-规约分析</h2><ul>
 <li>输入: 以$结尾的句子</li>
 <li>栈: 栈底为$的栈</li>
 <li>分析表: 确定下一步动作为移进还是规约</li>
@@ -964,7 +965,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 10:17:09" itemprop="dateModified" datetime="2019-12-10T10:17:09+08:00">2019-12-10</time>
+                <time title="修改时间：2020-01-03 09:49:07" itemprop="dateModified" datetime="2020-01-03T09:49:07+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1348,7 +1349,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-17 21:56:21" itemprop="dateModified" datetime="2019-12-17T21:56:21+08:00">2019-12-17</time>
+                <time title="修改时间：2020-01-03 09:48:43" itemprop="dateModified" datetime="2020-01-03T09:48:43+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
