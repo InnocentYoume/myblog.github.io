@@ -1182,7 +1182,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-10 09:47:01" itemprop="dateModified" datetime="2019-12-10T09:47:01+08:00">2019-12-10</time>
+                <time title="修改时间：2020-01-03 10:56:21" itemprop="dateModified" datetime="2020-01-03T10:56:21+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1231,14 +1231,14 @@
 </ul>
 </li>
 <li>定义<ul>
-<li>上下文无关文法是四元组( $V_T,V_N,S,P$ )<ul>
-<li>$V_T$: 终结符集合(非空有限集合)</li>
-<li>$V_N$: 非终结符集合( $V_T \bigcap V_N = \emptyset$ )</li>
+<li>上下文无关文法是四元组( $\sf V_T,V_N,S,P$ )<ul>
+<li>$\sf V_T$: 终结符集合(非空有限集合)</li>
+<li>$\sf V_N$: 非终结符集合( $\sf V_T \bigcap V_N = \emptyset$ )</li>
 <li>S: 开始符号</li>
-<li>P: 产生式集合 ( 产生式形式如$ A \rightarrow \alpha 其中 A \in V_N, \alpha \in (V_T \bigcup V_N)^*$ )</li>
+<li>P: 产生式集合 ( 产生式形式如$\sf  A \rightarrow \alpha 其中 A \in V_N, \alpha \in (V_T \bigcup V_N)^*$ )</li>
 </ul>
 </li>
-<li>例子<br>$ ( \{id,+, \ast ,-,(,) \} , \{expr,op\} , expr , P ) $<br>其中P包括:<br>expr $ \rightarrow $ expr op expr<br>expr $ \rightarrow $ (expr)<br>expr $ \rightarrow $ -expr<br>expr $ \rightarrow $ id<br>op $ \rightarrow $ +<br>op $ \rightarrow $ *  </li>
+<li>例子<br>$\sf ( \{id,+, \ast ,-,(,) \} , \{expr,op\} , expr , P ) $<br>其中P包括:<br>expr $ \rightarrow $ expr op expr<br>expr $ \rightarrow $ (expr)<br>expr $ \rightarrow $ -expr<br>expr $ \rightarrow $ id<br>op $ \rightarrow $ +<br>op $ \rightarrow $ *  </li>
 </ul>
 </li>
 <li>优点<ul>
@@ -1255,30 +1255,30 @@
 </li>
 <li><p>文法推导</p>
 <ul>
-<li>推导: 把产生式看成重写规则，把符号串中的非终结符用其产生式右部的串来代替<br>以文法 $ E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br>存在代换序列: $ E \Rightarrow E+E \Rightarrow id+E \Rightarrow id+id $<br>这个代换序列即<strong>从E到id+id的推导</strong>,  </li>
+<li>推导: 把产生式看成重写规则，把符号串中的非终结符用其产生式右部的串来代替<br>以文法 $\sf E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br>存在代换序列: $\sf E \Rightarrow E+E \Rightarrow id+E \Rightarrow id+id $<br>这个代换序列即<strong>从E到id+id的推导</strong>,  </li>
 <li>一般而言, 由上下无关文法产生的语言叫<strong>上下文无关语言</strong>  </li>
 <li>若两个文法产生相同的语言, 则称这两个文法<strong>等价</strong>  </li>
-<li>若存在S$\Rightarrow ^\ast \alpha$, 若α含非终结符, 则称其为文法的<strong>句型</strong>, 只含有终结符的句型, 称之为<strong>句子</strong>  </li>
-<li>在推导过程中, 每一步都代换句型中最左边的非终结符的推导,称之为<strong>最左推导</strong>(写作$\alpha \Rightarrow _{lm}\beta$), 类似的,存在<strong>最右推导</strong>(写作$\alpha \Rightarrow _{rm}\beta$), 最右推导亦称为<strong>规范推导</strong></li>
+<li>若存在S$\sf \Rightarrow ^\ast \alpha$, 若α含非终结符, 则称其为文法的<strong>句型</strong>, 只含有终结符的句型, 称之为<strong>句子</strong>  </li>
+<li>在推导过程中, 每一步都代换句型中最左边的非终结符的推导,称之为<strong>最左推导</strong>(写作$\sf \alpha \Rightarrow _{lm}\beta$), 类似的,存在<strong>最右推导</strong>(写作$sf \alpha \Rightarrow _{rm}\beta$), 最右推导亦称为<strong>规范推导</strong></li>
 </ul>
 </li>
 <li>分析树<ul>
 <li>分析树即推导的图形表示.</li>
-<li>例子:<br>以文法 $ E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/treeexam.jpg" alt="exm.png"><br>对于同样的句子, 其 <em>最终</em> 分析树是一样的, 但过程会有不同.</li>
+<li>例子:<br>以文法 $\sf E \rightarrow E+E|E \ast E|(E)|-E|id$为例:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/treeexam.jpg" alt="exm.png"><br>对于同样的句子, 其 <em>最终</em> 分析树是一样的, 但过程会有不同.</li>
 </ul>
 </li>
 <li>二义性<ul>
 <li>文法的二义性，是指对于符合文法规则的同一个句子，存在两种可能的分析树</li>
 <li>考虑如下的情况:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/binexam.jpg" alt><br>对于同一个句子, 该句子存在二义性, 分析树存在了不同, 也带来了不同的释义, 左边的为 id*(id+id), 而右边为 (id*id)+id, 但对于句子id*id+id, 一般认为(id*id)+id是正确的</li>
 <li>如何消除二义性, 一般而言, 需要加入<strong>消除二义性的规则</strong></li>
-<li>以文法 $ E \rightarrow E+E|E \ast E|id$为例:<br>可以更改为如下规则:<br>$ E \rightarrow E + T | T $<br>$ E \rightarrow E \ast F | F $<br>$ F \rightarrow id | (E) $</li>
+<li>以文法 $\sf E \rightarrow E+E|E \ast E|id$为例:<br>可以更改为如下规则:<br>$\sf E \rightarrow E + T | T $<br>$\sf E \rightarrow E \ast F | F $<br>$\sf F \rightarrow id | (E) $</li>
 </ul>
 </li>
 <li>正规式可以描述的语言都可以用上下文无关文法来描述</li>
 <li>NFA转化为上下文无关文法:<ol>
 <li>确定终结符集合</li>
-<li>为每个状态引入一个非终结符$A_i$</li>
-<li>如果状态i有一个转换a到状态j, 则引入产生式$A_i \rightarrow aA_i $, 如果i是接收状态, 则引入$A_i \rightarrow \epsilon$<br>例子:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfa2lex.jpg" alt></li>
+<li>为每个状态引入一个非终结符$\sf A_i$</li>
+<li>如果状态i有一个转换a到状态j, 则引入产生式$\sf A_i \rightarrow aA_j $, 如果i是接收状态, 则引入$\sf A_i \rightarrow \epsilon$<br>例子:<br><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/nfa2lex.jpg" alt></li>
 </ol>
 </li>
 <li>为什么要用正规式定义词法 <ul>
