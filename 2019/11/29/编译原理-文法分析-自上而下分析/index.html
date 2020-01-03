@@ -57,7 +57,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;Compile3-1.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;Chartmake.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;ChartExam.jpg">
-<meta property="og:updated_time" content="2020-01-03T03:04:20.162Z">
+<meta property="og:updated_time" content="2020-01-03T06:19:48.078Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;Compile3-1.jpg">
 
@@ -214,7 +214,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-03 11:04:20" itemprop="dateModified" datetime="2020-01-03T11:04:20+08:00">2020-01-03</time>
+                <time title="修改时间：2020-01-03 14:19:48" itemprop="dateModified" datetime="2020-01-03T14:19:48+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,7 +270,6 @@
 <li>若X⟶a… 则将终结符a加入FIRST(X)中</li>
 <li>若X⟶ε, 则将ε加入FIRST(X)中</li>
 <li>若X⟶Y…, 且Y为非终结符, 则将FIRST(Y)去除{ε}后加入FIRST(X)中</li>
-<li>若X⟶Y_1Y_2..Y_K,且Y1,Y2,..Yi-1 (2≤i≤k)都是非终结符，且Y1,Y2,..Yi-1 的FIRST集合中均包含ε，则将FIRST(Yj)的所有非ε元素加入到FIRST(X)中，(j=1,2,..i).特别地，若Y1~YK均有ε产生式，则将ε加到FIRST(X)中</li>
 <li><p>例子:</p>
 <pre><code>  S ⟶ BA
   A ⟶ BS|d
@@ -294,8 +293,9 @@
 <li><p>FOLLOW集合计算方法</p>
 <ol>
 <li>对文法开始符号S,置$于FOLLOW(S)中</li>
-<li>若有A⟶αBβ, 则将<strong>FIRST</strong>(β)去除{ε}后加入FOLLOW(B)中. (此处α可以为空)</li>
-<li>若A⟶αB 或A⟶αBβ, 且β $⇒^*$ ε(ε属于FIRST(β)), 则将FOLLOW(A)加入FOLLOW(B)中. (此处α可以为空）</li>
+<li>若有A⟶…BC…, 则将<strong>FIRST</strong>(C)加入FOLLOW(B)中. (<strong>若FIRST(C)中有ε, 则把FOLLOW(A)送入FOLLOW(B)</strong>)</li>
+<li>若A⟶…Bα…, 则把α放入FOLLOW(A)中</li>
+<li>若A⟶…B, 把FOLLOW(A)放入FOLLOW(B)中</li>
 </ol>
 <ul>
 <li><p>例子:</p>
@@ -310,10 +310,10 @@
   由S ⟶ BA, FOLLOW(B) += FIRST(A)
   由A ⟶ BS|d, FOLLOW(B) += FIRST(S)
   此时FOLLOW(B) = {a,b,c,d}
-  第三步(判断可加入的FOLLOW集合):
+  第三步(判断可加入的FOLLOW集合结尾非终结符或后部终结符):
   由B ⟶ aA|bS|c
-  既由B ⟶ aA, 得FOLLOW(A) +=  FIRST(B)
-  由B ⟶ bS, 得FOLLOW(S) += FIRST(B)
+  由B ⟶ aA, 得FOLLOW(A) += FOLLOW(B)
+  由B ⟶ bS, 得FOLLOW(S) += FOLLOW(B)
   此时FOLLOW(S) = {a,b,c,d,$}, FOLLOW(A) = {a,b,c,d}
   再由S ⟶ BA, FOLLOW(A) += FOLLOW(S)
   此时FOLLOW(A) = {a,b,c,d,$}
@@ -324,6 +324,7 @@
 </ul>
 </li>
 </ul>
+<p>关于FIRST集与FOLLOW集, 这里也有一个很好的<a href="https://blog.csdn.net/Jack_Wong2010/article/details/9074951" target="_blank" rel="noopener">例子</a></p>
 <h3 id="LL-1-文法-1"><a href="#LL-1-文法-1" class="headerlink" title="LL(1)文法"></a>LL(1)文法</h3><p>任意两个产生式A ⟶ α|β 如果他们都满足</p>
 <ul>
 <li>FIRST(α) ⋂ FIRST(β) = ∅</li>
