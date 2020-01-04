@@ -46,16 +46,18 @@
   };
 </script>
 
-  <meta name="keywords" content="IT,Embedded Software">
-<meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;categories&#x2F;index.html">
+  <meta name="description" content="一些概念 通常的命令式编程语言表现为多个函数的实现与相互调用 入口函数main 代码执行过程, 实际是依据过程调用关系形成一格调用结构图 每个过程的执行需要一定的辅助空间来辅助   程序的执行过程中, 程序中数据的存取是通过与之对应的存储单元进行的 程序使用的存储单元是由标识符表示的, 其对应的内存地址是由编译程序在编译时由其生成的目标程序运行时分配 过程的一次执行被称为过程的一次活动(过程可以理">
+<meta name="keywords" content="IT,Embedded Software">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编译原理-运行时存储空间的组织与管理">
+<meta property="og:url" content="http:&#x2F;&#x2F;qidianxuan.github.io&#x2F;2020&#x2F;01&#x2F;04&#x2F;%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%AD%98%E5%82%A8&#x2F;index.html">
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
+<meta property="og:description" content="一些概念 通常的命令式编程语言表现为多个函数的实现与相互调用 入口函数main 代码执行过程, 实际是依据过程调用关系形成一格调用结构图 每个过程的执行需要一定的辅助空间来辅助   程序的执行过程中, 程序中数据的存取是通过与之对应的存储单元进行的 程序使用的存储单元是由标识符表示的, 其对应的内存地址是由编译程序在编译时由其生成的目标程序运行时分配 过程的一次执行被称为过程的一次活动(过程可以理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-22T07:05:47.343Z">
+<meta property="og:updated_time" content="2020-01-04T09:37:32.031Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://qidianxuan.github.io/categories/">
+<link rel="canonical" href="http://qidianxuan.github.io/2020/01/04/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%AD%98%E5%82%A8/">
 
 
 <script id="page-configurations">
@@ -63,14 +65,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
-    isPage: true,
+    isPost: true,
+    isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>分类 | qidianxuan's blog
-  </title>
+  <title>编译原理-运行时存储空间的组织与管理 | qidianxuan's blog</title>
   
 
 
@@ -170,57 +171,167 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
           <div class="content">
             
 
   <div class="posts-expand">
-    
-    
-    
-    <div class="post-block" lang="zh-CN">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://qidianxuan.github.io/2020/01/04/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%AD%98%E5%82%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="qidianxuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="qidianxuan's blog">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          编译原理-运行时存储空间的组织与管理
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">分类
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2020-01-04 16:23:03 / 修改时间：17:37:32" itemprop="dateCreated datePublished" datetime="2020-01-04T16:23:03+08:00">2020-01-04</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" itemprop="url" rel="index">
+                    <span itemprop="name">编译原理</span>
+                  </a>
+                </span>
+            </span>
+
+          
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/04/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%AD%98%E5%82%A8/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/04/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%AD%98%E5%82%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
   
 
-</div>
+        </div>
+      </header>
 
-</header>
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      
-      
-      <div class="post-body">
-          <div class="category-all-page">
-            <div class="category-all-title">
-              目前共计 4 个分类
+        <h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><ul>
+<li>通常的命令式编程语言表现为多个函数的实现与相互调用<ul>
+<li><strong>入口函数</strong>main</li>
+<li>代码执行过程, 实际是依据过程调用关系形成一格调用结构图</li>
+<li>每个过程的执行需要一定的辅助空间来辅助</li>
+</ul>
+</li>
+<li>程序的执行过程中, 程序中数据的存取是通过与之对应的<strong>存储单元</strong>进行的</li>
+<li>程序使用的存储单元是由<strong>标识符</strong>表示的, 其对应的内存地址是由编译程序在编译时由其生成的目标程序运行时分配</li>
+<li>过程的一次执行被称为过程的一次<strong>活动</strong>(过程可以理解为”函数”, 而活动则可以视为”函数的调用”)</li>
+<li><strong>活动记录</strong>: 活动过程中用于存放所需信息的存储空间</li>
+<li>过程P的一次活动的<strong>生存期</strong>, 指的是从执行该活动期的第一步操作到最后一步操作之间的操作时间, 包括执行P式调用其他进程所花费的时间<ul>
+<li>过程<strong>递归</strong>时, 生存期指最外层, 即从开始到结束所有时间</li>
+<li>一个过程可以对应多个活动, 每次调用即一次活动</li>
+</ul>
+</li>
+</ul><a id="more"></a>
+<h2 id="过程内部局部存储分配策略"><a href="#过程内部局部存储分配策略" class="headerlink" title="过程内部局部存储分配策略"></a>过程内部局部存储分配策略</h2><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><ul>
+<li>函数, 对应一个过程</li>
+<li>调用函数, 对应一次活动</li>
+</ul>
+<h3 id="名字的作用域和绑定"><a href="#名字的作用域和绑定" class="headerlink" title="名字的作用域和绑定"></a>名字的作用域和绑定</h3><ul>
+<li>名字的<strong>作用域</strong><ul>
+<li>名字可以理解为”变量”</li>
+<li>一个声明起作用的程序部分为该声明的作用域</li>
+<li>即使一个名字在程序中只声明一次, 给名字在程序运行时也可能表示不同的<strong>数据对象</strong>(保存值的数据单元)</li>
+</ul>
+</li>
+<li>名字到存储单元的绑定<ul>
+<li>环境把名字映射到左值(存储单元), 而状态把左值(存储单元)映射到右值(值)</li>
+<li>赋值改变状态, 但不改变环境</li>
+<li>如果环境把名字x映射到存储单元s, 就说x被绑定到s</li>
+</ul>
+</li>
+</ul>
+<h3 id="活动记录"><a href="#活动记录" class="headerlink" title="活动记录"></a>活动记录</h3><ul>
+<li><p>被编译的程序每次运行时, 编译器从操作系统获得一块存储区(内存). 其内容包括:</p>
+<ul>
+<li>编译后的目标代码</li>
+<li>数据对象</li>
+<li><strong>用于管理过程活动的控制栈: 活动记录</strong></li>
+<li><p>空间安排</p>
+<p>  ||<br>  |:—-:|<br>  |代码|<br>  |静态数据|<br>  |堆↓|<br>  |空闲内存|<br>  |栈↑|<br>  ||</p>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2019/12/28/JavaEE%E5%A4%8D%E4%B9%A0-%E6%9E%B6%E6%9E%84/" rel="next" title="JavaEE复习-架构">
+                  <i class="fa fa-chevron-left"></i> JavaEE复习-架构
+                </a>
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/English/">English</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%B0%8F%E5%B7%A5%E5%85%B7/">小工具</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/">编译原理</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a><span class="category-list-count">4</span></li></ul>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
             </div>
           </div>
-        
-      </div>
-      
-      
-      
-    </div>
+      </footer>
     
+  </article>
+  
+  
+  
 
-    
-    
-    
   </div>
 
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -245,6 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程内部局部存储分配策略"><span class="nav-number">2.</span> <span class="nav-text">过程内部局部存储分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">2.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名字的作用域和绑定"><span class="nav-number">2.2.</span> <span class="nav-text">名字的作用域和绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动记录"><span class="nav-number">2.3.</span> <span class="nav-text">活动记录</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -438,6 +550,54 @@ window.addEventListener('pjax:success', () => {
   
 
   
+      
+<script type="text/x-mathjax-config">
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
