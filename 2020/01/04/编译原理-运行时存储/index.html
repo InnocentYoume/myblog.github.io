@@ -54,10 +54,8 @@
 <meta property="og:site_name" content="qidianxuan&#39;s blog">
 <meta property="og:description" content="一些概念 通常的命令式编程语言表现为多个函数的实现与相互调用 入口函数main 代码执行过程, 实际是依据过程调用关系形成一格调用结构图 每个过程的执行需要一定的辅助空间来辅助   程序的执行过程中, 程序中数据的存取是通过与之对应的存储单元进行的 程序使用的存储单元是由标识符表示的, 其对应的内存地址是由编译程序在编译时由其生成的目标程序运行时分配 过程的一次执行被称为过程的一次活动(过程可以理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;meminDeung.jpg">
-<meta property="og:updated_time" content="2020-01-04T09:46:26.449Z">
+<meta property="og:updated_time" content="2020-01-05T01:36:05.604Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;InnocentYoume&#x2F;PicBed&#x2F;master&#x2F;img&#x2F;meminDeung.jpg">
 
 <link rel="canonical" href="http://qidianxuan.github.io/2020/01/04/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%BF%90%E8%A1%8C%E6%97%B6%E5%AD%98%E5%82%A8/">
 
@@ -204,10 +202,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-01-04 16:23:03 / 修改时间：17:46:26" itemprop="dateCreated datePublished" datetime="2020-01-04T16:23:03+08:00">2020-01-04</time>
+              <time title="创建时间：2020-01-04 16:23:03" itemprop="dateCreated datePublished" datetime="2020-01-04T16:23:03+08:00">2020-01-04</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-01-05 09:36:05" itemprop="dateModified" datetime="2020-01-05T09:36:05+08:00">2020-01-05</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -287,15 +291,274 @@
 </li>
 </ul>
 <h3 id="活动记录"><a href="#活动记录" class="headerlink" title="活动记录"></a>活动记录</h3><ul>
-<li>被编译的程序每次运行时, 编译器从操作系统获得一块存储区(内存). 其内容包括:<ul>
+<li><p>被编译的程序每次运行时, 编译器从操作系统获得一块存储区(内存). 其内容包括:</p>
+<ul>
 <li>编译后的目标代码</li>
 <li>数据对象</li>
 <li><strong>用于管理过程活动的控制栈: 活动记录</strong></li>
-<li>空间安排</li>
-<li><img src="https://raw.githubusercontent.com/InnocentYoume/PicBed/master/img/meminDeung.jpg" alt></li>
+<li><p>空间安排</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">代码</span><br><span class="line">---</span><br><span class="line">静态数据</span><br><span class="line">---</span><br><span class="line">堆↓</span><br><span class="line">---</span><br><span class="line">空闲内存</span><br><span class="line">---</span><br><span class="line">栈↑</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>活动记录在栈中存放, 依调用顺序, 先调用则先入栈<br>一般的活动记录的布局:</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">临时数据: 计算中可能用到的临时变量</span><br><span class="line">---</span><br><span class="line">局部数据: 内部定义的局部变量</span><br><span class="line">---</span><br><span class="line">机器状态: 本过程调用前的机器状态</span><br><span class="line">---</span><br><span class="line">访问链: 引用其他活动记录的非局部数据</span><br><span class="line">---</span><br><span class="line">控制链: 指向调用过程的指针</span><br><span class="line">---</span><br><span class="line">返回值: 本过程返回给调用过程的值</span><br><span class="line">---</span><br><span class="line">实在参数: 调用过程中传给本过程的参数</span><br></pre></td></tr></table></figure>
+<h3 id="局部数据的安排"><a href="#局部数据的安排" class="headerlink" title="局部数据的安排"></a>局部数据的安排</h3><ul>
+<li><strong>字节</strong>是可编址内存最小单位</li>
+<li>一个过程所声明的局部变量, 按这些变量声明时出现的次序, 在活动记录的局部数据区依次分配空间</li>
+<li>局部数据的地址可以用于某个位置的<strong>偏移</strong>来表示</li>
+<li>数据对象的存储安排受目标机器寻址方式的影响, 存在<strong>对齐</strong>问题</li>
+<li>因为对齐而导致的无用空间称为<strong>衬垫空白区</strong></li>
+</ul>
+<h3 id="程序块"><a href="#程序块" class="headerlink" title="程序块"></a>程序块</h3><ul>
+<li>语法: {声明 语句}</li>
+<li>可以嵌套</li>
+<li>若一个名字x出现在B中却没有声明, 那它只能由其外围程序块声明</li>
+<li>并列程序块不会同时活跃</li>
+<li>并列程序块的变量可以重叠分配</li>
+</ul>
+<h2 id="全局栈式存储分配"><a href="#全局栈式存储分配" class="headerlink" title="全局栈式存储分配"></a>全局栈式存储分配</h2><ul>
+<li>静态分配策略 (例: 静态数据)<ul>
+<li>名字在程序被编译时绑定到存储单元, 不需要运行时如何支持</li>
+<li><strong>绑定的生存期</strong>是程序的整个运行时间</li>
+<li>控制再次进入该进程时, 局部变量的值和控制与上次一样</li>
+<li>每个活动记录大小固定</li>
+<li>过程调用时保存信息的地址在编译中是已知的  <strong>但是</strong></li>
+<li>不允许递归</li>
+<li>数据对象的长度以及内存中的位置, 必须在编译时已知</li>
+<li>数据结构不可动态建立</li>
+</ul>
+</li>
+<li>堆式分配策略 (例: 堆)<ul>
+<li>内存分配与释放按次序进行</li>
+<li>堆中可能包含交错的正在使用和已经释放的区域</li>
+</ul>
+</li>
+<li>栈式分配策略 (例: 栈)<ul>
+<li>栈式分配主要用于管理过程中的活动记录</li>
+<li>局部变量的生存期为过程活动的时间</li>
+<li>控制进入该过程时, 局部变量绑定到存储单元, 结束后, 局部变量空间释放</li>
+</ul>
+<ol>
+<li>活动树: 用树来描述控制进入和离开活动的方式<ul>
+<li>结点代表一个活动</li>
+<li>根节点代表主程序</li>
+<li>a是b的父节点, 当且仅当控制流从a的活动进入b的活动</li>
+<li>a处于b左边, a的生存期优先于b的生存期 </li>
+</ul>
+</li>
+<li>运行栈: 控制栈中的信息拓广到包括过程活动所需的所有局部信息(活动记录)<ul>
+<li>以活动记录<strong>中间</strong>的某个位置作为基地址</li>
+<li>长度能较早确定的域放在活动记录的中间</li>
+<li>临时数据放在局部数据的后面    </li>
+<li>参数域和可能有的返回值域放在仅靠调用者活动记录的地方</li>
+<li>用同样的代码来执行各个活动的保存和恢复</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>栈上可变长数据<ul>
+<li>活动记录长度在编译时长度不能确定的情况</li>
+<li><em>Java将其分配到堆上</em></li>
+<li>在如下情况栈式行不通<ul>
+<li>过程停止后, 局部名字需要维持</li>
+<li>被调用者活动长于调用者</li>
+<li>PASCAL和C不遵守栈式规则, Java禁止程序员自己释放空间</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>栈式分配的动态释放空间将可能引起<strong>悬空引用</strong>: 引用某个已经释放的存储单元</li>
+</ul>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">静态分配</th>
+<th style="text-align:center">栈式分配</th>
+<th style="text-align:center">堆式分配</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">存储空间</td>
+<td style="text-align:center">静态数据区</td>
+<td style="text-align:center">栈区</td>
+<td style="text-align:center">堆区</td>
+</tr>
+<tr>
+<td style="text-align:center">使用范围</td>
+<td style="text-align:center">外部变量, 静态局部变量, 常量</td>
+<td style="text-align:center">局部变量, 形参</td>
+<td style="text-align:center">动态变量</td>
+</tr>
+<tr>
+<td style="text-align:center">分配时间</td>
+<td style="text-align:center">程序开始前</td>
+<td style="text-align:center">进入过程前</td>
+<td style="text-align:center">用户决定</td>
+</tr>
+<tr>
+<td style="text-align:center">释放时间</td>
+<td style="text-align:center">编译时</td>
+<td style="text-align:center">运行时</td>
+<td style="text-align:center">运行时</td>
+</tr>
+<tr>
+<td style="text-align:center">存取速度</td>
+<td style="text-align:center">快</td>
+<td style="text-align:center">慢</td>
+<td style="text-align:center">慢</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="非局部名字的访问"><a href="#非局部名字的访问" class="headerlink" title="非局部名字的访问"></a>非局部名字的访问</h2><ul>
+<li>不同的作用域规则下, 非局部名字的访问方式不同<ul>
+<li>静态作用域<ul>
+<li>无过程嵌套的静态作用域(C)</li>
+<li>有过程嵌套的静态作用域(Pascal)</li>
+</ul>
+</li>
+<li>动态作用域(Lisp)<br>考虑如下例子</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="keyword">int</span> x = <span class="number">5</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;      </span><br><span class="line">    <span class="keyword">return</span> x;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">g</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;    </span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> f();  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span>*argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;        </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d "</span>,g());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果为5, 因为C采用静态作用域, 扫描到程序正文时选取最近的绑定, 但如果C采用动态作用域, 输出结果为1</p>
+<h3 id="无过程嵌套的静态作用域"><a href="#无过程嵌套的静态作用域" class="headerlink" title="无过程嵌套的静态作用域"></a>无过程嵌套的静态作用域</h3><ul>
+<li>过程体中的非局部引用可以直接使用静态确定的地址(非局部数据此时就是全局数据)</li>
+<li>局部变量在栈顶的活动记录中, 可以通过base_sp指针来访问</li>
+<li>无须深入栈中取数据, 无须访问链</li>
+<li>过程可以作为参数来传递, 也可以作为结果来返回</li>
+</ul>
+<h3 id="有过程嵌套的静态作用域"><a href="#有过程嵌套的静态作用域" class="headerlink" title="有过程嵌套的静态作用域"></a>有过程嵌套的静态作用域</h3><ul>
+<li><strong>过程嵌套深度</strong>-层数</li>
+<li>变量的嵌套深度: 它的声明所在过程的嵌套深度作为该名字的嵌套深度</li>
+<li>访问链: 用来寻找非局部名字的存储单元</li>
+</ul>
+<h3 id="动态作用域"><a href="#动态作用域" class="headerlink" title="动态作用域"></a>动态作用域</h3><ul>
+<li>被调用过程的非局部名字a和它在调用过程中引用的是<strong>同样的</strong>存储单元, 基于<strong>运行时的调用关系</strong></li>
+<li>新的绑定仅为被调用过程的局部名字建立，这些名字在被调用过程的活动记录中占用存储单元</li>
+<li>实现动态作用域的方法<ul>
+<li>深访问: 用控制链搜索运行栈, 寻找包含该非局部名字的第一个活动记录</li>
+<li>浅访问<ul>
+<li>为每个名字在<strong>静态分配</strong>的存储空间中保存它的当前值</li>
+<li>当过程p的新活动出现时, p的局部名字n使用在静态数据区分配给n的存储单元. n的先前值可以保存在p的活动记录中, 当p的活动结束时再恢复</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><h3 id="值调用"><a href="#值调用" class="headerlink" title="值调用"></a>值调用</h3><ul>
+<li>实参的右值传给被调用过程 </li>
+<li>实现:<ul>
+<li>把形参当作所在过程的局部名看待, 形参的存储单元在该过程的活动记录中</li>
+<li>调用过程计算实参，并把右值放入形参的存储单元中</li>
+</ul>
+</li>
+</ul>
+<h3 id="引用调用"><a href="#引用调用" class="headerlink" title="引用调用"></a>引用调用</h3><ul>
+<li>实参的左值传给被调用过程 </li>
+<li>实现:<ul>
+<li>把实参的左值放入形参的存储单元</li>
+<li>在被调用过程的目标代码中, 任何对形参的引用都是通过传给该过程的指针来间接引用实参的</li>
+</ul>
+</li>
+</ul>
+<h3 id="换名调用"><a href="#换名调用" class="headerlink" title="换名调用"></a>换名调用</h3><p>用实参表达式对形参进行正文替换</p>
+<h2 id="代码生成"><a href="#代码生成" class="headerlink" title="代码生成"></a>代码生成</h2><h3 id="目标程序"><a href="#目标程序" class="headerlink" title="目标程序"></a>目标程序</h3><ul>
+<li>绝对机器语言程序</li>
+<li>可重定位机器语言程序<ul>
+<li>允许程序模块分别编译</li>
+<li>调用其它先前编译好的模块</li>
+</ul>
+</li>
+<li>汇编语言程序<ul>
+<li>免去编译器重复汇编器的工作</li>
+<li>增加可读性</li>
+</ul>
+</li>
+</ul>
+<h3 id="指令的选择"><a href="#指令的选择" class="headerlink" title="指令的选择"></a>指令的选择</h3><ul>
+<li>性质决定难易程度</li>
+<li>统一性和完备性是重要因素</li>
+<li>速度和机器方言也是重要元素</li>
+<li>逐句生成代码, 往往得到低质量的代码</li>
+</ul>
+<h3 id="寄存器分配"><a href="#寄存器分配" class="headerlink" title="寄存器分配"></a>寄存器分配</h3><ul>
+<li>处于寄存器的指令网短于内存的指令 执行也更快</li>
+<li>寄存器分配<ul>
+<li>选择驻留在寄存器的一些变量</li>
+</ul>
+</li>
+<li>寄存器指派<ul>
+<li>挑选变量要驻留的具体寄存器</li>
+</ul>
+</li>
+<li>寻找最优的计算次序是一个NP完全问题</li>
+</ul>
+<h2 id="目标机器"><a href="#目标机器" class="headerlink" title="目标机器"></a>目标机器</h2><ul>
+<li>地址模式和其汇编语言形式以及附加代价  </li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">模式</th>
+<th style="text-align:left">形式</th>
+<th style="text-align:left">地址</th>
+<th style="text-align:right">附加代价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">绝对地址</td>
+<td style="text-align:left">M</td>
+<td style="text-align:left">M</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left">寄存器</td>
+<td style="text-align:left">R</td>
+<td style="text-align:left">R</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">变址</td>
+<td style="text-align:left">c(R)</td>
+<td style="text-align:left">c+contents(R)</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left">间址寄存器</td>
+<td style="text-align:left">*R</td>
+<td style="text-align:left">contests(R)</td>
+<td style="text-align:right">0</td>
+</tr>
+<tr>
+<td style="text-align:left">间接变址</td>
+<td style="text-align:left">*c(R)</td>
+<td style="text-align:left">contents(c+contents(R))</td>
+<td style="text-align:right">1</td>
+</tr>
+<tr>
+<td style="text-align:left">直接量</td>
+<td style="text-align:left">#c</td>
+<td style="text-align:left">c</td>
+<td style="text-align:right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>指令的代价</strong>为: 1+其源和目的地址的附加代价</li>
+<li>举例:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#指令-----------------代价</span><br><span class="line">MOV R0,R1;------------1</span><br><span class="line">MOV R5,M ;------------2</span><br><span class="line">ADD #1,R3;------------2</span><br><span class="line">SUB 4(R0), *12(R1);---3</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -317,6 +580,9 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/01/04/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81-%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/" rel="prev" title="编译原理-中间代码,代码生成">
+                  编译原理-中间代码,代码生成 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
@@ -356,7 +622,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程内部局部存储分配策略"><span class="nav-number">2.</span> <span class="nav-text">过程内部局部存储分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">2.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名字的作用域和绑定"><span class="nav-number">2.2.</span> <span class="nav-text">名字的作用域和绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动记录"><span class="nav-number">2.3.</span> <span class="nav-text">活动记录</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些概念"><span class="nav-number">1.</span> <span class="nav-text">一些概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过程内部局部存储分配策略"><span class="nav-number">2.</span> <span class="nav-text">过程内部局部存储分配策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">2.1.</span> <span class="nav-text">过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#名字的作用域和绑定"><span class="nav-number">2.2.</span> <span class="nav-text">名字的作用域和绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#活动记录"><span class="nav-number">2.3.</span> <span class="nav-text">活动记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部数据的安排"><span class="nav-number">2.4.</span> <span class="nav-text">局部数据的安排</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序块"><span class="nav-number">2.5.</span> <span class="nav-text">程序块</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#全局栈式存储分配"><span class="nav-number">3.</span> <span class="nav-text">全局栈式存储分配</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比较"><span class="nav-number">3.1.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#非局部名字的访问"><span class="nav-number">4.</span> <span class="nav-text">非局部名字的访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无过程嵌套的静态作用域"><span class="nav-number">4.1.</span> <span class="nav-text">无过程嵌套的静态作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有过程嵌套的静态作用域"><span class="nav-number">4.2.</span> <span class="nav-text">有过程嵌套的静态作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#动态作用域"><span class="nav-number">4.3.</span> <span class="nav-text">动态作用域</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数传递"><span class="nav-number">5.</span> <span class="nav-text">参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值调用"><span class="nav-number">5.1.</span> <span class="nav-text">值调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用调用"><span class="nav-number">5.2.</span> <span class="nav-text">引用调用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#换名调用"><span class="nav-number">5.3.</span> <span class="nav-text">换名调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码生成"><span class="nav-number">6.</span> <span class="nav-text">代码生成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目标程序"><span class="nav-number">6.1.</span> <span class="nav-text">目标程序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令的选择"><span class="nav-number">6.2.</span> <span class="nav-text">指令的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#寄存器分配"><span class="nav-number">6.3.</span> <span class="nav-text">寄存器分配</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目标机器"><span class="nav-number">7.</span> <span class="nav-text">目标机器</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -370,7 +636,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
