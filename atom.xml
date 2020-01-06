@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qidianxuan.github.io/"/>
-  <updated>2020-01-04T13:48:35.338Z</updated>
+  <updated>2020-01-06T07:50:43.179Z</updated>
   <id>http://qidianxuan.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>嵌入式软件设计复习</title>
+    <link href="http://qidianxuan.github.io/2020/01/06/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0/"/>
+    <id>http://qidianxuan.github.io/2020/01/06/%E5%B5%8C%E5%85%A5%E5%BC%8F%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%A4%8D%E4%B9%A0/</id>
+    <published>2020-01-06T07:50:43.000Z</published>
+    <updated>2020-01-06T07:50:43.179Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>编译原理-中间代码,代码生成</title>
